@@ -1,5 +1,6 @@
 import React from "react";
 import { Mail, Phone, Instagram, Facebook, Linkedin, ArrowUp } from "lucide-react";
+import logo from "../../assets/image/anaami-main-logo.png";
 
 interface FooterProps {
   onPageChange?: (page: string) => void;
@@ -33,46 +34,12 @@ export default function Footer({ onPageChange }: FooterProps) {
             onClick={handleLogoClick}
             className="flex flex-col items-center justify-center group mb-3 cursor-pointer select-none"
           >
-            <svg
-              viewBox="0 0 160 140"
-              className="w-12 h-10 text-white mb-3 flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M80 15 L140 120 H20 L80 15 Z"
-                stroke="currentColor"
-                strokeWidth="3.5"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M80 37 L122 110 H38 Z"
-                stroke="currentColor"
-                strokeWidth="1.75"
-                strokeLinejoin="round"
-              />
-              <path d="M80 15 L80 37" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-              <path d="M140 120 L122 110" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-              <path d="M20 120 L38 110" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-            </svg>
-            <div className="flex flex-col items-center">
-              <span 
-                className="text-2xl md:text-3xl font-normal tracking-[0.2em] text-white uppercase leading-none"
-                style={{ fontFamily: "'Playfair Display', 'Cormorant Garamond', Georgia, serif" }}
-              >
-                ΛNΛΛMII
-              </span>
-              <div className="flex items-center w-40 gap-1.5 mt-2">
-                <div className="h-[0.5px] bg-white/40 flex-grow"></div>
-                <span 
-                  className="text-[7.5px] tracking-[0.22em] uppercase font-bold whitespace-nowrap"
-                  style={{ color: "#60584D" }}
-                >
-                  MILLWORK GROUP
-                </span>
-                <div className="h-[0.5px] bg-white/40 flex-grow"></div>
-              </div>
-            </div>
+            <img
+            src={logo}
+            alt="Anaamii Logo"
+            className="h-12 md:h-14 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+          />
+          
           </div>
 
           {/* Contact Details Grid */}
