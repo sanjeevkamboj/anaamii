@@ -1,0 +1,8 @@
+{
+  "name": "Anami Millwork Group",
+  "description": "A high-end Scandinavian luxury furniture and interior design website showcasing premium bespoke millwork, custom culinary cabinetry, and dynamic architectural wall structures.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
