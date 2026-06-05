@@ -38,24 +38,6 @@ const spaces = [
     label: "Home Office",
     description: "Executive Studio Rooms",
     image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=805&q=80"
-  },
-  {
-    id: "laundry",
-    label: "Laundry Room",
-    description: "Utility & Washing Chambers",
-    image: "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=805&q=80"
-  },
-  {
-    id: "millwork",
-    label: "Custom Millwork",
-    description: "Artisanal Tailored Millwork",
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=805&q=80"
-  },
-  {
-    id: "library",
-    label: "Library & Lounge",
-    description: "Sovereign Bookcases & Cellars",
-    image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=805&q=80"
   }
 ];
 
@@ -121,7 +103,7 @@ export default function ContactView() {
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent" />
 
         <div className="relative z-10 max-w-4xl mx-auto text-center px-6 mt-8 sm:mt-12">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-[#8D9981] font-bold block mb-2.5 sm:mb-3.5 animate-pulse">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-[#60584D] font-bold block mb-2.5 sm:mb-3.5 animate-pulse">
             Atelier Consultation
           </span>
           <h1 
@@ -130,7 +112,7 @@ export default function ContactView() {
           >
             Start Your Commission
           </h1>
-          <div className="h-[1px] w-12 bg-[#8D9981]/50 mx-auto" />
+          <div className="h-[1px] w-12 bg-[#60584D]/50 mx-auto" />
           <p className="text-stone-400 font-sans text-[10px] sm:text-xs tracking-widest mt-3 sm:mt-4 uppercase max-w-sm sm:max-w-md mx-auto leading-relaxed">
             Secure private consultation with our Chief Design Officers
           </p>
@@ -143,7 +125,7 @@ export default function ContactView() {
           
           {/* Left Column: Form Builder (col-span-7) */}
           <div className="lg:col-span-7 bg-[#070707] border border-white/[0.04] p-6 sm:p-10 lg:p-6 xl:p-8 2xl:p-10 rounded-[2.5rem] flex flex-col justify-between relative shadow-2xl overflow-hidden min-h-[600px] lg:min-h-[480px] xl:min-h-[530px] 2xl:min-h-[600px]">
-            <div className="absolute top-0.5 right-0.5 w-32 h-32 bg-[#8D9981]/5 rounded-full filter blur-2xl pointer-events-none" />
+            <div className="absolute top-0.5 right-0.5 w-32 h-32 bg-[#60584D]/5 rounded-full filter blur-2xl pointer-events-none" />
 
             <AnimatePresence mode="wait">
               {!formSubmitted ? (
@@ -154,11 +136,11 @@ export default function ContactView() {
                       type="button"
                       onClick={() => setStep(1)}
                       className={`flex items-center gap-2 cursor-pointer transition-colors ${
-                        step === 1 ? "text-[#8D9981] font-bold" : "text-stone-500 hover:text-stone-300"
+                        step === 1 ? "text-[#60584D] font-bold" : "text-stone-500 hover:text-stone-300"
                       }`}
                     >
                       <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[9px] border transition-colors ${
-                        step === 1 ? "border-[#8D9981] bg-[#8D9981]/15 text-[#8D9981]" : "border-stone-700 text-stone-500"
+                        step === 1 ? "border-[#60584D] bg-[#60584D]/15 text-[#60584D]" : "border-stone-700 text-stone-500"
                       }`}>1</span>
                       <span>Select Space</span>
                     </button>
@@ -166,10 +148,10 @@ export default function ContactView() {
                     <ChevronRight className="w-3.5 h-3.5 text-stone-700" />
 
                     <div className={`flex items-center gap-2 transition-colors ${
-                      step === 2 ? "text-[#8D9981] font-bold" : "text-stone-600"
+                      step === 2 ? "text-[#60584D] font-bold" : "text-stone-600"
                     }`}>
                       <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[9px] border transition-colors ${
-                        step === 2 ? "border-[#8D9981] bg-[#8D9981]/15 text-[#8D9981]" : "border-stone-800 text-stone-650"
+                        step === 2 ? "border-[#60584D] bg-[#60584D]/15 text-[#60584D]" : "border-stone-800 text-stone-650"
                       }`}>2</span>
                       <span>Contact Details</span>
                     </div>
@@ -186,7 +168,7 @@ export default function ContactView() {
                         className="space-y-6 lg:space-y-4 xl:space-y-5 2xl:space-y-6 text-left animate-fade-in"
                       >
                         <div className="space-y-1 sm:space-y-2">
-                          <span className="text-[10px] uppercase tracking-wider text-[#8D9981] font-bold flex items-center gap-1.5">
+                          <span className="text-[10px] uppercase tracking-wider text-[#60584D] font-bold flex items-center gap-1.5">
                             <Sparkles className="w-3.5 h-3.5" />
                             Step 1 &bull; Configurator
                           </span>
@@ -204,10 +186,10 @@ export default function ContactView() {
                                 key={space.id}
                                 type="button"
                                 onClick={() => handleSelectSpace(space.label)}
-                                className={`relative overflow-hidden rounded-2xl aspect-[1.3] sm:aspect-[1.35] lg:aspect-[1.28] xl:aspect-[1.2] 2xl:aspect-[1.25] group text-left cursor-pointer border transition-all duration-500 flex flex-col justify-end p-2.5 sm:p-3 shadow-md ${
+                                className={`relative overflow-hidden rounded-xl aspect-[1.3] sm:aspect-[1.35] lg:aspect-[1.28] xl:aspect-[1.2] 2xl:aspect-[1.25] group text-left cursor-pointer border transition-all duration-500 flex flex-col justify-end p-2.5 sm:p-3 shadow-md ${
                                   isSelected
-                                    ? "border-[#8D9981] ring-1 ring-[#8D9981] bg-[#8D9981]/10"
-                                    : "border-white/[0.05] hover:border-[#8D9981]/50 bg-white/[0.01]"
+                                    ? "border-[#60584D] ring-1 ring-[#60584D] bg-[#60584D]/10"
+                                    : "border-white/[0.05] hover:border-[#60584D]/50 bg-white/[0.01]"
                                 }`}
                               >
                                 {/* Immersive premium photo background */}
@@ -222,14 +204,14 @@ export default function ContactView() {
                                 {/* Interactive select icon overlay */}
                                 <div className={`absolute top-2.5 right-2.5 w-4 h-4 rounded-full border flex items-center justify-center transition-all ${
                                   isSelected 
-                                    ? "border-[#8D9981] bg-[#8D9981] text-black" 
+                                    ? "border-[#60584D] bg-[#60584D] text-black" 
                                     : "border-white/30 bg-black/40 text-transparent"
                                 }`}>
                                   <div className="w-1.5 h-1.5 rounded-full bg-current" />
                                 </div>
 
                                 <div className="relative z-10 w-full">
-                                  <h4 className="text-white text-[11px] sm:text-xs lg:text-[10px] xl:text-[11px] 2xl:text-sm font-bold uppercase tracking-wider group-hover:text-[#8D9981] transition-colors leading-tight">
+                                  <h4 className="text-white text-[11px] sm:text-xs lg:text-[10px] xl:text-[11px] 2xl:text-sm font-bold uppercase tracking-wider group-hover:text-[#60584D] transition-colors leading-tight">
                                     {space.label}
                                   </h4>
                                   <p className="text-stone-400 text-[9px] lg:text-[8px] xl:text-[9.5px] 2xl:text-[10px] font-light mt-0.5 group-hover:text-stone-200 transition-colors leading-none">
@@ -262,14 +244,14 @@ export default function ContactView() {
                             <span>Back to Spaces</span>
                           </button>
                           
-                          <div className="text-[10px] uppercase font-mono tracking-widest bg-[#8D9981]/15 text-[#8D9981] px-2.5 py-1 rounded-full border border-[#8D9981]/30 flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#8D9981] animate-pulse" />
+                          <div className="text-[10px] uppercase font-mono tracking-widest bg-[#60584D]/15 text-[#60584D] px-2.5 py-1 rounded-full border border-[#60584D]/30 flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#60584D] animate-pulse" />
                             <span>Target: {formData.selectedSpace}</span>
                           </div>
                         </div>
 
                         <div className="space-y-1">
-                          <span className="text-[10px] uppercase tracking-wider text-[#8D9981] font-bold">Step 2 &bull; Contact Filing</span>
+                          <span className="text-[10px] uppercase tracking-wider text-[#60584D] font-bold">Step 2 &bull; Contact Filing</span>
                           <h3 className="text-white text-lg xl:text-xl font-bold font-sans tracking-tight">Interactive Request Blueprint</h3>
                         </div>
 
@@ -284,7 +266,7 @@ export default function ContactView() {
                               value={formData.firstName}
                               onChange={(e) => setFormData({...formData, firstName: e.target.value})}
                               placeholder="John"
-                              className="w-full bg-[#111] border border-white/10 rounded-xl px-4 py-3 lg:px-3 lg:py-2.5 xl:px-4 xl:py-3 text-sm lg:text-xs xl:text-sm text-white placeholder-stone-600 focus:outline-none focus:border-[#8D9981] focus:ring-1 focus:ring-[#8D9981] transition-all"
+                              className="w-full bg-[#111] border border-white/10 rounded-xl px-4 py-3 lg:px-3 lg:py-2.5 xl:px-4 xl:py-3 text-sm lg:text-xs xl:text-sm text-white placeholder-stone-600 focus:outline-none focus:border-[#60584D] focus:ring-1 focus:ring-[#60584D] transition-all"
                             />
                           </div>
 
@@ -297,7 +279,7 @@ export default function ContactView() {
                               value={formData.lastName}
                               onChange={(e) => setFormData({...formData, lastName: e.target.value})}
                               placeholder="Voss"
-                              className="w-full bg-[#111] border border-white/10 rounded-xl px-4 py-3 lg:px-3 lg:py-2.5 xl:px-4 xl:py-3 text-sm lg:text-xs xl:text-sm text-white placeholder-stone-600 focus:outline-none focus:border-[#8D9981] focus:ring-1 focus:ring-[#8D9981] transition-all"
+                              className="w-full bg-[#111] border border-white/10 rounded-xl px-4 py-3 lg:px-3 lg:py-2.5 xl:px-4 xl:py-3 text-sm lg:text-xs xl:text-sm text-white placeholder-stone-600 focus:outline-none focus:border-[#60584D] focus:ring-1 focus:ring-[#60584D] transition-all"
                             />
                           </div>
                         </div>
@@ -313,7 +295,7 @@ export default function ContactView() {
                               value={formData.email}
                               onChange={(e) => setFormData({...formData, email: e.target.value})}
                               placeholder="john.voss@estate.com"
-                              className="w-full bg-[#111] border border-white/10 rounded-xl px-4 py-3 lg:px-3 lg:py-2.5 xl:px-4 xl:py-3 text-sm lg:text-xs xl:text-sm text-white placeholder-stone-600 focus:outline-none focus:border-[#8D9981] focus:ring-1 focus:ring-[#8D9981] transition-all"
+                              className="w-full bg-[#111] border border-white/10 rounded-xl px-4 py-3 lg:px-3 lg:py-2.5 xl:px-4 xl:py-3 text-sm lg:text-xs xl:text-sm text-white placeholder-stone-600 focus:outline-none focus:border-[#60584D] focus:ring-1 focus:ring-[#60584D] transition-all"
                             />
                           </div>
 
@@ -326,7 +308,7 @@ export default function ContactView() {
                               value={formData.phone}
                               onChange={(e) => setFormData({...formData, phone: e.target.value})}
                               placeholder="+1 (555) 0123"
-                              className="w-full bg-[#111] border border-white/10 rounded-xl px-4 py-3 lg:px-3 lg:py-2.5 xl:px-4 xl:py-3 text-sm lg:text-xs xl:text-sm text-white placeholder-stone-600 focus:outline-none focus:border-[#8D9981] focus:ring-1 focus:ring-[#8D9981] transition-all"
+                              className="w-full bg-[#111] border border-white/10 rounded-xl px-4 py-3 lg:px-3 lg:py-2.5 xl:px-4 xl:py-3 text-sm lg:text-xs xl:text-sm text-white placeholder-stone-600 focus:outline-none focus:border-[#60584D] focus:ring-1 focus:ring-[#60584D] transition-all"
                             />
                           </div>
                         </div>
@@ -334,7 +316,7 @@ export default function ContactView() {
                         {/* Field Row 3: Appointment Date Selection */}
                         <div className="space-y-1.5 lg:space-y-1">
                           <label htmlFor="appointmentDate" className="text-[10px] uppercase tracking-widest text-stone-400 font-bold font-mono flex items-center gap-2">
-                            <Calendar className="w-3.5 h-3.5 text-[#8D9981]" />
+                            <Calendar className="w-3.5 h-3.5 text-[#60584D]" />
                             <span>Preferred Appointment Date *</span>
                           </label>
                           <input
@@ -343,7 +325,7 @@ export default function ContactView() {
                             required
                             value={formData.appointmentDate}
                             onChange={(e) => setFormData({...formData, appointmentDate: e.target.value})}
-                            className="w-full bg-[#111] border border-white/10 rounded-xl px-4 py-3 lg:px-3 lg:py-2.5 xl:px-4 xl:py-3 text-sm lg:text-xs xl:text-sm text-white focus:outline-none focus:border-[#8D9981] focus:ring-1 focus:ring-[#8D9981] transition-all cursor-pointer"
+                            className="w-full bg-[#111] border border-white/10 rounded-xl px-4 py-3 lg:px-3 lg:py-2.5 xl:px-4 xl:py-3 text-sm lg:text-xs xl:text-sm text-white focus:outline-none focus:border-[#60584D] focus:ring-1 focus:ring-[#60584D] transition-all cursor-pointer"
                           />
                         </div>
 
@@ -357,7 +339,7 @@ export default function ContactView() {
                             value={formData.message}
                             onChange={(e) => setFormData({...formData, message: e.target.value})}
                             placeholder={`Describe your specific parameters for the ${formData.selectedSpace} design layout...`}
-                            className="w-full bg-[#111] border border-white/10 rounded-xl px-4 py-3 lg:px-3 lg:py-2 text-sm lg:text-xs xl:text-sm text-white placeholder-stone-700 focus:outline-none focus:border-[#8D9981] focus:ring-1 focus:ring-[#8D9981] transition-all resize-none h-[100px] lg:h-[65px] xl:h-[80px] 2xl:h-[100px]"
+                            className="w-full bg-[#111] border border-white/10 rounded-xl px-4 py-3 lg:px-3 lg:py-2 text-sm lg:text-xs xl:text-sm text-white placeholder-stone-700 focus:outline-none focus:border-[#60584D] focus:ring-1 focus:ring-[#60584D] transition-all resize-none h-[100px] lg:h-[65px] xl:h-[80px] 2xl:h-[100px]"
                           />
                         </div>
 
@@ -368,10 +350,10 @@ export default function ContactView() {
                             id="catalogOption"
                             checked={formData.catalogOption}
                             onChange={(e) => setFormData({...formData, catalogOption: e.target.checked})}
-                            className="w-4 h-4 bg-stone-900 accent-[#8D9981] rounded border-white/10 border cursor-pointer shrink-0"
+                            className="w-4 h-4 bg-stone-900 accent-[#60584D] rounded border-white/10 border cursor-pointer shrink-0"
                           />
                           <label htmlFor="catalogOption" className="text-[10px] text-stone-400 tracking-wide cursor-pointer font-sans leading-snug">
-                            Request physical copy of printed <span className="text-[#8D9981] font-semibold">"ANAAMII Atelier Catalog 2026/2027"</span> directly to my estate coordinate.
+                            Request physical copy of printed <span className="text-[#60584D] font-semibold">"ANAAMII Atelier Catalog 2026/2027"</span> directly to my estate coordinate.
                           </label>
                         </div>
 
@@ -379,7 +361,7 @@ export default function ContactView() {
                         <div className="pt-2 lg:pt-1">
                           <button
                             type="submit"
-                            className="w-full bg-[#8D9981] hover:bg-white text-black font-sans text-xs font-bold uppercase tracking-[0.2em] py-4 lg:py-2.5 xl:py-3.5 2xl:py-4 rounded-[4px] cursor-pointer shadow-lg hover:shadow-[0_20px_45px_rgba(141,153,129,0.35)] transition-all duration-300"
+                            className="w-full bg-[#60584D] hover:bg-white hover:text-black text-white font-sans text-xs font-bold uppercase tracking-[0.2em] py-4 lg:py-2.5 xl:py-3.5 2xl:py-4 rounded-[4px] cursor-pointer shadow-lg hover:shadow-[0_20px_45px_rgba(96,88,77,0.35)] transition-all duration-300"
                           >
                             Authorize & Lodge Consultation Request
                           </button>
@@ -397,22 +379,22 @@ export default function ContactView() {
                   transition={{ type: "spring", damping: 25 }}
                   className="space-y-8 py-10 text-center flex flex-col items-center justify-center h-full"
                 >
-                  <div className="w-16 h-16 bg-[#8D9981]/15 border border-[#8D9981]/30 rounded-full flex items-center justify-center text-[#8D9981] shrink-0">
+                  <div className="w-16 h-16 bg-[#60584D]/15 border border-[#60584D]/30 rounded-full flex items-center justify-center text-[#60584D] shrink-0">
                     <CheckCircle className="w-8 h-8 stroke-[1.5]" />
                   </div>
 
                   <div className="space-y-3">
-                    <span className="text-[10px] uppercase tracking-[0.3em] text-[#8D9981] font-bold block">Lodge Successful</span>
+                    <span className="text-[10px] uppercase tracking-[0.3em] text-[#60584D] font-bold block">Lodge Successful</span>
                     <h3 className="text-white text-2xl sm:text-3xl font-bold font-serif">Awaiting Atelier Clearance</h3>
                     <p className="text-stone-400 text-xs sm:text-xs max-w-md mx-auto leading-relaxed">
-                      Thank you, <span className="text-white font-semibold">{formData.firstName} {formData.lastName}</span>. Your private <b className="text-[#8D9981]">{formData.selectedSpace}</b> millwork blueprint request has been successfully registered on our servers for <span className="text-[#8D9981] font-mono font-semibold">{formData.appointmentDate}</span>. Our Chief Estimator will contact your coordinates within 24 hours to clear blueprints.
+                      Thank you, <span className="text-white font-semibold">{formData.firstName} {formData.lastName}</span>. Your private <b className="text-[#60584D]">{formData.selectedSpace}</b> millwork blueprint request has been successfully registered on our servers for <span className="text-[#60584D] font-mono font-semibold">{formData.appointmentDate}</span>. Our Chief Estimator will contact your coordinates within 24 hours to clear blueprints.
                     </p>
                   </div>
 
                   <div className="bg-[#0b0b0b] border border-white/5 p-5 rounded-2xl w-full max-w-md text-left font-sans text-xs space-y-3 shadow-inner">
                     <div className="flex justify-between border-b border-white/[0.04] pb-2 text-stone-500 font-mono text-[10px]">
                       <span>TRANSACTION REFERENCE</span>
-                      <span className="text-[#8D9981]">AMG-2026-064{Math.floor(Math.random() * 90) + 10}</span>
+                      <span className="text-[#60584D]">AMG-2026-064{Math.floor(Math.random() * 90) + 10}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-stone-400">Registered Email:</span>
@@ -424,10 +406,10 @@ export default function ContactView() {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-stone-400">Target Segment:</span>
-                      <span className="text-[#8D9981] font-medium font-mono text-[11px]">{formData.selectedSpace}</span>
+                      <span className="text-[#60584D] font-medium font-mono text-[11px]">{formData.selectedSpace}</span>
                     </div>
                     {formData.catalogOption && (
-                      <div className="flex items-center gap-1.5 text-[#8D9981] text-[10px] uppercase font-bold pt-1.5">
+                      <div className="flex items-center gap-1.5 text-[#60584D] text-[10px] uppercase font-bold pt-1.5">
                         <Star className="w-3.5 h-3.5 fill-current" />
                         <span>Catalog requested for delivery</span>
                       </div>
@@ -450,7 +432,7 @@ export default function ContactView() {
             
             {/* Atelier Contacts Card */}
             <div className="space-y-8 lg:space-y-4 xl:space-y-6 bg-[#070707] border border-white/[0.04] p-8 sm:p-10 lg:p-5 xl:p-7 2xl:p-10 rounded-[2.5rem] relative overflow-hidden flex-grow shadow-2xl">
-              <span className="text-[10px] uppercase tracking-widest text-[#8D9981] font-bold block">
+              <span className="text-[10px] uppercase tracking-widest text-[#60584D] font-bold block">
                 Atelier Directory
               </span>
               <h3 className="text-white text-2xl lg:text-lg xl:text-xl 2xl:text-2xl font-bold font-sans tracking-tight">Our Global Coordinates</h3>
@@ -460,11 +442,11 @@ export default function ContactView() {
                 
                 {/* Copenhagen Headquarters */}
                 <div className="flex gap-4 lg:gap-3 items-start">
-                  <div className="w-10 h-10 lg:w-9 lg:h-9 xl:w-10 xl:h-10 rounded-xl bg-[#8D9981]/15 border border-[#8D9981]/25 flex items-center justify-center text-[#8D9981] shrink-0">
+                  <div className="w-10 h-10 lg:w-9 lg:h-9 xl:w-10 xl:h-10 rounded-xl bg-[#60584D]/15 border border-[#60584D]/25 flex items-center justify-center text-[#60584D] shrink-0">
                     <MapPin className="w-4 h-4 lg:w-3.5 lg:h-3.5" />
                   </div>
                   <div>
-                    <span className="text-[10px] uppercase tracking-wider text-[#8D9981] font-bold block">Copenhagen HQ</span>
+                    <span className="text-[10px] uppercase tracking-wider text-[#60584D] font-bold block">Copenhagen HQ</span>
                     <strong className="text-white text-sm lg:text-xs xl:text-sm font-sans block mt-1">ANAAMII Millwork Group ApS</strong>
                     <p className="text-stone-450 text-xs lg:text-[11px] xl:text-xs font-light mt-0.5 leading-relaxed">Amaliengade 32C, Copenhagen K, 1256 Denmark</p>
                     <span className="text-stone-500 font-mono text-[9px] mt-1 block">Coordinate: 55.6761° N, 12.5683° E</span>
@@ -473,11 +455,11 @@ export default function ContactView() {
 
                 {/* Munich Showroom Loft */}
                 <div className="flex gap-4 lg:gap-3 items-start">
-                  <div className="w-10 h-10 lg:w-9 lg:h-9 xl:w-10 xl:h-10 rounded-xl bg-[#8D9981]/15 border border-[#8D9981]/25 flex items-center justify-center text-[#8D9981] shrink-0">
+                  <div className="w-10 h-10 lg:w-9 lg:h-9 xl:w-10 xl:h-10 rounded-xl bg-[#60584D]/15 border border-[#60584D]/25 flex items-center justify-center text-[#60584D] shrink-0">
                     <MapPin className="w-4 h-4 lg:w-3.5 lg:h-3.5" />
                   </div>
                   <div>
-                    <span className="text-[10px] uppercase tracking-wider text-[#8D9981] font-bold block">Munich Atelier</span>
+                    <span className="text-[10px] uppercase tracking-wider text-[#60584D] font-bold block">Munich Atelier</span>
                     <strong className="text-white text-sm lg:text-xs xl:text-sm font-sans block mt-1">Staatliche Millwork Loft</strong>
                     <p className="text-stone-450 text-xs lg:text-[11px] xl:text-xs font-light mt-0.5 leading-relaxed">Prinzregentenstraße 12, 80538 Munich, Germany</p>
                   </div>
@@ -486,15 +468,15 @@ export default function ContactView() {
                 {/* Secure Connections */}
                 <div className="border-t border-white/[0.05] pt-6 lg:pt-4 xl:pt-5 2xl:pt-6 space-y-4 lg:space-y-2 xl:space-y-3.5 2xl:space-y-4">
                   <div className="flex gap-3 items-center text-stone-300 hover:text-white transition-colors">
-                    <Phone className="w-4 h-4 lg:w-3.5 lg:h-3.5 text-[#8D9981] shrink-0" />
+                    <Phone className="w-4 h-4 lg:w-3.5 lg:h-3.5 text-[#60584D] shrink-0" />
                     <span className="text-xs sm:text-sm lg:text-xs xl:text-sm font-mono tracking-wide">+45 88 43 21 00</span>
                   </div>
                   <div className="flex gap-3 items-center text-stone-300 hover:text-white transition-colors">
-                    <Mail className="w-4 h-4 lg:w-3.5 lg:h-3.5 text-[#8D9981] shrink-0" />
+                    <Mail className="w-4 h-4 lg:w-3.5 lg:h-3.5 text-[#60584D] shrink-0" />
                     <span className="text-xs sm:text-sm lg:text-xs xl:text-sm font-mono tracking-wide">atelier@anaamii.com</span>
                   </div>
                   <div className="flex gap-3 items-center text-stone-300 font-sans">
-                    <Clock className="w-4 h-4 lg:w-3.5 lg:h-3.5 text-[#8D9981] shrink-0" />
+                    <Clock className="w-4 h-4 lg:w-3.5 lg:h-3.5 text-[#60584D] shrink-0" />
                     <span className="text-xs lg:text-[11px] xl:text-xs font-light">Monday to Friday: 09:00 — 17:00 (CET)</span>
                   </div>
                 </div>
@@ -510,9 +492,9 @@ export default function ContactView() {
 
               {/* Glowing Coordinate Dot center */}
               <div className="relative z-10 flex flex-col items-center justify-center text-center p-4 lg:p-2 xl:p-4">
-                <div className="w-10 h-10 lg:w-8 lg:h-8 xl:w-10 xl:h-10 rounded-full bg-[#8D9981]/15 border border-[#8D9981]/30 flex items-center justify-center relative animate-pulse mb-3 lg:mb-2 xl:mb-3">
-                  <div className="w-3 animate-ping absolute inset-0 rounded-full bg-[#8D9981]/10 border border-[#8D9981]/20" />
-                  <MapPin className="w-5 h-5 lg:w-4 lg:h-4 xl:w-5 xl:h-5 text-[#8D9981] absolute animate-bounce" />
+                <div className="w-10 h-10 lg:w-8 lg:h-8 xl:w-10 xl:h-10 rounded-full bg-[#60584D]/15 border border-[#60584D]/30 flex items-center justify-center relative animate-pulse mb-3 lg:mb-2 xl:mb-3">
+                  <div className="w-3 animate-ping absolute inset-0 rounded-full bg-[#60584D]/10 border border-[#60584D]/20" />
+                  <MapPin className="w-5 h-5 lg:w-4 lg:h-4 xl:w-5 xl:h-5 text-[#60584D] absolute animate-bounce" />
                 </div>
                 
                 <h4 className="text-white text-xs lg:text-[10px] xl:text-xs font-bold uppercase tracking-widest leading-none font-sans">Amaliengade CorridorHQ</h4>
@@ -520,12 +502,12 @@ export default function ContactView() {
                 
                 <div className="h-[1px] w-20 bg-stone-800 my-3 lg:my-2" />
                 
-                <span className="text-[#8D9981] font-mono text-[9px] tracking-widest font-bold">55.6885° N, 12.5936° E</span>
+                <span className="text-[#60584D] font-mono text-[9px] tracking-widest font-bold">55.6885° N, 12.5936° E</span>
               </div>
 
               {/* Edge Map Accents */}
               <div className="absolute bottom-4 right-4 text-white/30 font-mono text-[8.5px] tracking-widest hidden xl:block">MAP COORDINATES GRID 4.0</div>
-              <div className="absolute top-4 left-4 text-[#8D9981]/55 font-mono text-[8.5px] tracking-widest flex items-center gap-1.5 uppercase font-bold">
+              <div className="absolute top-4 left-4 text-[#60584D]/55 font-mono text-[8.5px] tracking-widest flex items-center gap-1.5 uppercase font-bold">
                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 <span>Local server online</span>
               </div>
@@ -539,7 +521,7 @@ export default function ContactView() {
       {/* 3. Luxury NDA Confidentiality Footer Stripe */}
       <section className="w-full py-10 bg-[#090909] border-t border-white/[0.04]">
         <div className="max-w-4xl mx-auto px-6 text-center flex flex-col items-center gap-3">
-          <ShieldCheck className="w-7 h-7 text-[#8D9981]" />
+          <ShieldCheck className="w-7 h-7 text-[#60584D]" />
           <h4 className="text-white text-xs font-bold uppercase tracking-widest">Private Consultant Non-Disclosure commitment</h4>
           <p className="text-stone-500 text-[11px] font-light max-w-xl leading-relaxed">
             All blueprints, architectural plans, dimensional parameters, personal coordinate addresses, and design correspondence remain highly guarded secrets. ANAAMII maintains double-layer data encryption standards and strictly honors general non-disclosure stipulations.

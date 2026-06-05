@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, ChevronRight, Instagram, Facebook } from "lucide-react";
 import { NAVIGATION_ITEMS } from "../constants";
-import logo from "../../assets/image/anaami-main-logo.png";
 
 interface HeaderProps {
   onWishlistClick?: () => void;
@@ -44,8 +43,8 @@ export default function Header({ wishlistCount = 0, currentPage = "home", onPage
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${
           isScrolled
-            ? "bg-[#000000e6] border-b border-white/10 backdrop-blur-md py-1.5 shadow-xl text-white"
-            : "bg-transparent border-b border-transparent py-1.5 text-white"
+            ? "bg-[#60584D]/95 border-b border-white/15 backdrop-blur-md py-2 shadow-xl text-white"
+            : "bg-[#60584D] border-b border-white/10 py-2 text-white"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-14 relative font-sans">
@@ -58,27 +57,68 @@ export default function Header({ wishlistCount = 0, currentPage = "home", onPage
               className="flex items-center gap-3 group"
             >
               {/* Premium Vector 3D Penrose / Impossible Triangle Logo */}
-            <img
-              src={logo}
-              alt="Anaamii Logo"
-              className="h-12 md:h-14 w-auto object-contain transition-all duration-300 group-hover:scale-105"
-            />
+              <svg
+                viewBox="0 0 160 140"
+                className="w-10 h-8.5 md:w-11 md:h-9.5 flex-shrink-0 text-white transition-all duration-300 group-hover:scale-105 pointer-events-none"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M80 15 L140 120 H20 L80 15 Z"
+                  stroke="currentColor"
+                  strokeWidth="3.5"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M80 37 L122 110 H38 Z"
+                  stroke="currentColor"
+                  strokeWidth="1.75"
+                  strokeLinejoin="round"
+                />
+                <path d="M80 15 L80 37" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                <path d="M140 120 L122 110" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                <path d="M20 120 L38 110" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                <path d="M50 67 L80 37" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <path d="M110 67 L80 37" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <path d="M80 110 L80 90" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <line x1="28" y1="126" x2="132" y2="126" stroke="currentColor" strokeWidth="1" strokeOpacity="0.6" />
+              </svg>
+ 
+              {/* Brand Lettering */}
+              <div className="flex flex-col items-start leading-none text-left">
+                <span 
+                  className="text-[19px] md:text-[23px] font-normal tracking-[0.16em] text-white uppercase leading-none"
+                  style={{ fontFamily: "'Playfair Display', 'Cormorant Garamond', Georgia, serif" }}
+                >
+                  ΛNΛΛMII
+                </span>
+                <div className="flex items-center w-full gap-1 mt-1">
+                  <div className="h-[0.5px] bg-white/40 flex-grow"></div>
+                  <span 
+                    className="text-[6.5px] md:text-[7.5px] tracking-[0.18em] uppercase font-bold whitespace-nowrap"
+                    style={{ fontFamily: "var(--font-helvetica)", color: "#EAE1D4" }}
+                  >
+                    MILLWORK GROUP
+                  </span>
+                  <div className="h-[0.5px] bg-white/40 flex-grow"></div>
+                </div>
+              </div>
             </a>
           </div>
-
+ 
           {/* Center Section: Centered Navigation Menu */}
           <nav className="hidden md:flex items-center gap-10 justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
             {NAVIGATION_ITEMS.map((item) => {
               const itemSlug = item.label.toLowerCase();
               const isActive = currentPage === itemSlug;
-
+ 
               return (
                 <a
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleLinkClick(e, itemSlug)}
-                  className={`font-sans text-[11px] font-semibold tracking-[0.2em] transition-colors uppercase nav-link whitespace-nowrap ${
-                    isActive ? "text-[#BCA374]" : "text-white/80 hover:text-white"
+                  className={`font-sans text-[11px] font-semibold tracking-[0.2em] transition-all uppercase nav-link whitespace-nowrap pb-0.5 border-b-2 ${
+                    isActive ? "text-[#f5f2ed] border-[#f5f2ed]" : "text-white/75 hover:text-white border-transparent hover:border-white/40"
                   }`}
                 >
                   {item.label}
@@ -90,24 +130,24 @@ export default function Header({ wishlistCount = 0, currentPage = "home", onPage
           {/* Right Section: Prominent "Book Appointment" button + Socials */}
           <div className="flex items-center gap-5 md:gap-7 flex-shrink-0 z-10">
             {/* Social Media icons */}
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-3">
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Instagram"
-                className="text-white/70 hover:text-white hover:scale-110 transition-all cursor-pointer p-1"
+                className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 border border-white/15 hover:border-white hover:bg-white transition-all duration-300 cursor-pointer shadow-md group"
               >
-                <Instagram className="w-4 h-4 stroke-[1.5]" />
+                <Instagram className="w-4 h-4 stroke-[1.5] text-white group-hover:text-[#60584D] group-hover:scale-110 transition-all duration-300" />
               </a>
               <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Facebook"
-                className="text-white/70 hover:text-white hover:scale-110 transition-all cursor-pointer p-1"
+                className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 border border-white/15 hover:border-white hover:bg-white transition-all duration-300 cursor-pointer shadow-md group"
               >
-                <Facebook className="w-4 h-4 stroke-[1.5]" />
+                <Facebook className="w-4 h-4 stroke-[1.5] text-white group-hover:text-[#60584D] group-hover:scale-110 transition-all duration-300" />
               </a>
             </div>
 
@@ -147,7 +187,7 @@ export default function Header({ wishlistCount = 0, currentPage = "home", onPage
 
         {/* Content panel */}
         <div
-          className={`absolute left-0 top-0 h-full w-full max-w-sm bg-stone-950 border-r border-white/5 p-8 flex flex-col justify-between transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) ${
+          className={`absolute left-0 top-0 h-full w-full max-w-sm bg-[#60584D] border-r border-white/15 p-8 flex flex-col justify-between transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) ${
             isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
@@ -183,7 +223,7 @@ export default function Header({ wishlistCount = 0, currentPage = "home", onPage
                   </span>
                   <span 
                     className="text-[6px] tracking-[0.14em] uppercase font-bold mt-0.5"
-                    style={{ color: "#8D9981" }}
+                    style={{ color: "#EAE1D4" }}
                   >
                     MILLWORK GROUP
                   </span>
@@ -238,18 +278,22 @@ export default function Header({ wishlistCount = 0, currentPage = "home", onPage
               </a>
 
               {/* Mobile Social media icon row */}
-              <div className="flex gap-4 pt-2">
+              <div className="flex gap-3 pt-2">
                 <a
                   href="https://instagram.com"
-                  className="text-white/50 hover:text-white transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full flex items-center justify-center bg-white/10 border border-white/15 hover:border-white hover:bg-white transition-all duration-300 group"
                 >
-                  <Instagram className="w-5 h-5 stroke-[1.5]" />
+                  <Instagram className="w-5 h-5 stroke-[1.5] text-white/90 group-hover:text-[#60584D] transition-colors" />
                 </a>
                 <a
                   href="https://facebook.com"
-                  className="text-white/50 hover:text-white transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full flex items-center justify-center bg-white/10 border border-white/15 hover:border-white hover:bg-white transition-all duration-300 group"
                 >
-                  <Facebook className="w-5 h-5 stroke-[1.5]" />
+                  <Facebook className="w-5 h-5 stroke-[1.5] text-white/90 group-hover:text-[#60584D] transition-colors" />
                 </a>
               </div>
             </div>

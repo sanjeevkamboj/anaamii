@@ -135,7 +135,7 @@ export default function ProjectsView() {
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
 
         <div className="relative z-10 max-w-4xl mx-auto text-center px-6 mt-12">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-[#8D9981] font-bold block mb-3.5">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-[#60584D] font-bold block mb-3.5">
             Architectural Skeletons
           </span>
           <h1 
@@ -144,7 +144,7 @@ export default function ProjectsView() {
           >
             Finished Commissions
           </h1>
-          <div className="h-[1px] w-12 bg-[#8D9981]/50 mx-auto" />
+          <div className="h-[1px] w-12 bg-[#60584D]/50 mx-auto" />
           <p className="text-stone-400 font-sans text-xs tracking-widest mt-4 uppercase">
             A precise record of our permanent installations
           </p>
@@ -166,7 +166,7 @@ export default function ProjectsView() {
                 }}
                 className={`py-2 px-4 sm:px-5 text-[10px] rounded-[4px] font-bold uppercase tracking-widest border transition-all duration-300 cursor-pointer ${
                   activeFilter === cat
-                    ? "bg-[#8D9981] border-[#8D9981] text-black shadow-lg"
+                    ? "bg-[#60584D] border-[#60584D] text-black shadow-lg"
                     : "bg-transparent border-transparent text-stone-400 hover:text-white"
                 }`}
               >
@@ -187,7 +187,7 @@ export default function ProjectsView() {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                   onClick={() => setSelectedIdx(index)}
-                  className="group bg-[#0b0b0b] rounded-[2rem] overflow-hidden border border-white/[0.03] hover:border-[#8D9981]/35 transition-all duration-500 cursor-pointer flex flex-col h-full hover:shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+                  className="group bg-[#0b0b0b] rounded-[2rem] overflow-hidden border border-white/[0.03] hover:border-[#60584D]/35 transition-all duration-500 cursor-pointer flex flex-col h-full hover:shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
                 >
                   {/* Image wrapper */}
                   <div className="relative aspect-[4/3] w-full overflow-hidden bg-stone-900">
@@ -200,19 +200,19 @@ export default function ProjectsView() {
 
                     {/* Expand icon indicator */}
                     <div className="absolute top-5 right-5 w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Maximize2 className="w-4 h-4 text-[#8D9981]" />
+                      <Maximize2 className="w-4 h-4 text-[#60584D]" />
                     </div>
                   </div>
 
                   {/* Body textual information */}
                   <div className="p-6 flex flex-col justify-between flex-grow text-left">
                     <div className="space-y-2">
-                      <div className="flex items-center gap-1.5 text-[9px] uppercase tracking-widest text-[#8D9981] font-bold">
+                      <div className="flex items-center gap-1.5 text-[9px] uppercase tracking-widest text-[#60584D] font-bold">
                         <MapPin className="w-3.5 h-3.5" />
                         <span>{project.location}</span>
                       </div>
                       
-                      <h3 className="text-white text-lg font-bold font-sans tracking-tight leading-snug group-hover:text-[#8D9981] transition-colors">
+                      <h3 className="text-white text-lg font-bold font-sans tracking-tight leading-snug group-hover:text-[#60584D] transition-colors">
                         {project.title}
                       </h3>
                     </div>
@@ -242,7 +242,7 @@ export default function ProjectsView() {
             {/* Top Close bar */}
             <div className="absolute top-0 inset-x-0 h-24 px-6 sm:px-12 flex justify-between items-center z-50">
               <div className="text-left text-white hidden sm:block">
-                <span className="text-[10px] uppercase tracking-widest text-[#8D9981] font-bold">Finished Project commission</span>
+                <span className="text-[10px] uppercase tracking-widest text-[#60584D] font-bold">Finished Project commission</span>
                 <p className="text-xs font-light font-sans text-stone-300 mt-0.5">
                   {filteredProjects[selectedIdx].title} — {filteredProjects[selectedIdx].location}
                 </p>
@@ -262,7 +262,7 @@ export default function ProjectsView() {
               {/* Back switches */}
               <button
                 onClick={handlePrev}
-                className="absolute left-3 sm:left-6 md:left-12 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-14 sm:h-14 rounded-[4px] bg-stone-900/80 border border-white/10 hover:border-white/30 text-white hover:text-[#8D9981] flex items-center justify-center transition-all duration-300 cursor-pointer z-40 active:scale-90"
+                className="absolute left-3 sm:left-6 md:left-12 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-14 sm:h-14 rounded-[4px] bg-stone-900/80 border border-white/10 hover:border-white/30 text-white hover:text-[#60584D] flex items-center justify-center transition-all duration-300 cursor-pointer z-40 active:scale-90"
               >
                 <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
@@ -285,7 +285,7 @@ export default function ProjectsView() {
               {/* Next switches */}
               <button
                 onClick={handleNext}
-                className="absolute right-3 sm:right-6 md:right-12 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-14 sm:h-14 rounded-[4px] bg-stone-900/80 border border-white/10 hover:border-white/30 text-white hover:text-[#8D9981] flex items-center justify-center transition-all duration-300 cursor-pointer z-40 active:scale-90"
+                className="absolute right-3 sm:right-6 md:right-12 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-14 sm:h-14 rounded-[4px] bg-stone-900/80 border border-white/10 hover:border-white/30 text-white hover:text-[#60584D] flex items-center justify-center transition-all duration-300 cursor-pointer z-40 active:scale-90"
               >
                 <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
@@ -298,7 +298,7 @@ export default function ProjectsView() {
                   key={dotIdx}
                   onClick={() => setSelectedIdx(dotIdx)}
                   className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                    dotIdx === selectedIdx ? "w-8 bg-[#8D9981]" : "w-2 bg-white/20 hover:bg-white"
+                    dotIdx === selectedIdx ? "w-8 bg-[#60584D]" : "w-2 bg-white/20 hover:bg-white"
                   }`}
                 />
               ))}

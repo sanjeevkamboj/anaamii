@@ -33,7 +33,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#000000] text-white overflow-x-hidden selection:bg-white/10 selection:text-white">
+    <div className="min-h-screen bg-stone-950 text-white overflow-x-hidden selection:bg-white/10 selection:text-white">
       {/* 1. Transparent absolute top header - present on all pages */}
       <Header 
         wishlistCount={wishlistCount} 

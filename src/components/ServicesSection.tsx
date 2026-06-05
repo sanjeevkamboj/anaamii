@@ -149,6 +149,15 @@ export default function ServicesSection() {
   // Selected service state for the modal
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
 
+  // Bespoke custom modal states
+  const [isBespokeModalOpen, setIsBespokeModalOpen] = useState(false);
+  const [bespokeName, setBespokeName] = useState("");
+  const [bespokeEmail, setBespokeEmail] = useState("");
+  const [bespokeServiceType, setBespokeServiceType] = useState("Bespoke Furniture Curation");
+  const [bespokeBudget, setBespokeBudget] = useState("Signature Estate");
+  const [bespokeMessage, setBespokeMessage] = useState("");
+  const [isBespokeSubmitted, setIsBespokeSubmitted] = useState(false);
+
   // Booking consultation forms fields (inside modal)
   const [bookingFirstName, setBookingFirstName] = useState("");
   const [bookingLastName, setBookingLastName] = useState("");
@@ -170,29 +179,20 @@ export default function ServicesSection() {
   // Triplicated array for infinite loop (18 cards total: 6 x 3)
   const duplicatedServices = [...SERVICES, ...SERVICES, ...SERVICES];
 
-  // GSAP ScrollTrigger timeline to dynamically scale container width from 100% to squeezed states and back
+  // GSAP ScrollTrigger to dynamically expand container from reduced width to 100% on scroll
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
     const ctx = gsap.context(() => {
       const isMobile = window.innerWidth < 768;
-      const startWidth = "100%";
-      const midWidth1 = isMobile ? "94vw" : "84vw";
-      const centerWidth = isMobile ? "88vw" : "72vw";
-      const midWidth2 = isMobile ? "94vw" : "84vw";
-      const endWidth = "100%";
+      const initialWidth = isMobile ? "90vw" : "82vw";
+      const initialRadius = isMobile ? "28px" : "56px";
 
-      const startRadius = "0px";
-      const midRadius1 = isMobile ? "24px" : "56px";
-      const centerRadius = isMobile ? "32px" : "64px";
-      const midRadius2 = isMobile ? "24px" : "56px";
-      const endRadius = "0px";
-
-      // Set initial full-width seamless configuration
+      // Set initial reduced-width rounded configuration
       gsap.set(container, {
-        width: startWidth,
-        borderRadius: startRadius,
+        width: initialWidth,
+        borderRadius: initialRadius,
         maxWidth: "100%",
       });
 
@@ -200,35 +200,16 @@ export default function ServicesSection() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top bottom", // Starts when top of section joins screen bottom
-          end: "bottom bottom", // Ends exactly when bottom of section joins screen bottom
+          end: "bottom center", // Smoothly becomes full width by the time bottom reaches center of view
           scrub: 2.4,          // Highly relaxed, buttery smooth scrub interaction with momentum
           invalidateOnRefresh: true,
         }
       });
 
       tl.to(container, {
-        width: midWidth1,
-        borderRadius: midRadius1,
-        duration: 1,
-        ease: "power2.in" // Starts slowly/relaxed, then accelerates.
-      })
-      .to(container, {
-        width: centerWidth,
-        borderRadius: centerRadius,
-        duration: 1.5,
-        ease: "power3.in" // More dramatic pull in
-      })
-      .to(container, {
-        width: midWidth2,
-        borderRadius: midRadius2,
-        duration: 1.5,
-        ease: "power2.out" // Transitions out smoothly
-      })
-      .to(container, {
-        width: endWidth,
-        borderRadius: endRadius,
-        duration: 1,
-        ease: "power1.out"
+        width: "100%",
+        borderRadius: "0px",
+        ease: "power2.out",
       });
     });
 
@@ -360,7 +341,7 @@ export default function ServicesSection() {
     <section
       ref={sectionRef}
       id="services"
-      className="relative w-full bg-[#000000] flex flex-col justify-center items-center overflow-hidden py-0 animate-fade-in"
+      className="relative w-full bg-stone-950 flex flex-col justify-center items-center overflow-hidden py-0 animate-fade-in"
     >
       {/* Outer Section Wrapper with initially reduced sizing and rounded corners */}
       <div
@@ -376,10 +357,10 @@ export default function ServicesSection() {
         <div className="max-w-7xl mx-auto mb-6 md:mb-8 lg:mb-3 xl:mb-4 2xl:mb-8 flex flex-col items-center text-center px-6 md:px-12 block">
           <div className="inline-flex items-center gap-2.5 mb-2.5 group select-none">
             <div className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#8D9981] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#8D9981]"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#60584D] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#60584D]"></span>
             </div>
-            <span className="text-[10px] uppercase tracking-[0.3em] font-extrabold text-[#8D9981] font-sans">
+            <span className="text-[10px] uppercase tracking-[0.3em] font-extrabold text-[#60584D] font-sans">
               WHAT WE DO & BUILD
             </span>
           </div>
@@ -390,7 +371,7 @@ export default function ServicesSection() {
           >
             Discover Our Interior Design Services
           </h2>
-          <div className="h-[1px] w-24 bg-[#8D9981]/45 mt-3 lg:mt-2 xl:mt-2.5 2xl:mt-4" />
+          <div className="h-[1px] w-24 bg-[#60584D]/45 mt-3 lg:mt-2 xl:mt-2.5 2xl:mt-4" />
         </div>
 
         {/* DRAGGABLE CAROUSEL CONTAINER (Full width, margin-free, immersive) */}
@@ -436,12 +417,12 @@ export default function ServicesSection() {
                   </div>
 
                   {/* Top-Left Floating Minimal Accent Icon */}
-                  <div className="absolute top-4 left-4 lg:top-5 lg:left-5 bg-black/70 backdrop-blur-md rounded-full p-2.5 lg:p-3 shadow-md border border-white/10 text-white z-20 transition-all duration-500 group-hover:bg-[#8D9981] group-hover:text-black">
+                  <div className="absolute top-4 left-4 lg:top-5 lg:left-5 bg-black/70 backdrop-blur-md rounded-full p-2.5 lg:p-3 shadow-md border border-white/10 text-white z-20 transition-all duration-500 group-hover:bg-[#60584D] group-hover:text-black">
                     <ServiceIcon className="w-3.5 h-3.5 lg:w-4 lg:h-4 stroke-[1.5]" />
                   </div>
 
                   {/* Symmetrical code tag at the top-right */}
-                  <div className="absolute top-4 right-4 lg:top-5 lg:right-5 bg-black/50 backdrop-blur-md text-[#8D9981] px-2.5 py-1 lg:px-3 lg:py-1.5 rounded-full text-[8.5px] lg:text-[9px] font-bold tracking-widest uppercase z-20 border border-white/5">
+                  <div className="absolute top-4 right-4 lg:top-5 lg:right-5 bg-black/50 backdrop-blur-md text-white/90 px-2.5 py-1 lg:px-3 lg:py-1.5 rounded-full text-[8.5px] lg:text-[9px] font-bold tracking-widest uppercase z-20 border border-white/5">
                     Code #{service.code}
                   </div>
 
@@ -462,7 +443,7 @@ export default function ServicesSection() {
                         e.stopPropagation();
                         openModal(service);
                       }}
-                      className="inline-flex items-center gap-1.5 px-4 py-2 lg:px-3 lg:py-1.5 xl:px-4 xl:py-2 bg-[#000000] hover:bg-[#8D9981] text-white text-[8px] lg:text-[7.5px] xl:text-[8.2px] 2xl:text-[9.5px] font-bold tracking-[0.18em] uppercase transition-all duration-300 w-auto justify-center shadow-lg transform group-hover:scale-[1.02] cursor-pointer rounded-[4px]"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 lg:px-3 lg:py-1.5 xl:px-4 xl:py-2 bg-[#000000] hover:bg-[#60584D] text-white text-[8px] lg:text-[7.5px] xl:text-[8.2px] 2xl:text-[9.5px] font-bold tracking-[0.18em] uppercase transition-all duration-300 w-auto justify-center shadow-lg transform group-hover:scale-[1.02] cursor-pointer rounded-[4px]"
                     >
                       <span>Explore Service</span>
                       <ArrowUpRight className="w-3 h-3 lg:w-3.5 lg:h-3.5 stroke-[2] text-amber-100" />
@@ -475,15 +456,18 @@ export default function ServicesSection() {
           </div>
         </div>
 
-        {/* Footer Contact Prompt */}
-        <div className="mt-6 lg:mt-4 xl:mt-4.5 2xl:mt-12 flex justify-center text-center px-6 md:px-12 z-10">
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 bg-[#000000] hover:bg-stone-900 border border-stone-850 text-white px-5 py-2.5 sm:px-6 sm:py-3.5 rounded-[4px] text-[11px] sm:text-xs font-semibold tracking-wide transition-all duration-300 cursor-pointer shadow-md font-sans hover:shadow-lg"
+        {/* Elegant Centered Premium CTA Button only */}
+        <div className="mt-4 sm:mt-6 lg:mt-8 w-full flex justify-center items-center z-10 px-6">
+          <button
+            onClick={() => setIsBespokeModalOpen(true)}
+            className="group relative inline-flex items-center gap-3 bg-white hover:bg-[#60584D] text-black hover:text-white px-9 py-4.5 sm:px-11 sm:py-5 rounded-full text-xs sm:text-[13px] font-bold font-sans tracking-[0.22em] uppercase transition-all duration-350 cursor-pointer shadow-2xl hover:scale-105 active:scale-95 border border-white/5 hover:border-[#60584D]/30"
           >
-            <MessageSquare className="w-3.5 h-3.5 text-[#8D9981]" />
-            <span>Need more services based on your demand? <span className="underline ml-0.5 font-bold decoration-[#8D9981]">Contact us</span></span>
-          </a>
+            {/* Soft decorative golden-bronze glow behind on hover */}
+            <div className="absolute inset-x-0 -bottom-10 h-20 w-3/4 mx-auto rounded-full bg-[#60584D]/25 blur-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            
+            <span className="relative z-10 font-bold">Inquire Bespoke Commission</span>
+            <ArrowUpRight className="w-4 h-4 text-stone-800 group-hover:text-white transition-all duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </button>
         </div>
 
       </div>
@@ -503,13 +487,13 @@ export default function ServicesSection() {
               {/* Close Button */}
               <button
                 onClick={closeModal}
-                className="absolute top-6 right-6 bg-black/80 hover:bg-black text-white hover:text-[#8D9981] p-3 rounded-[4px] transition-all duration-350 z-50 shadow-lg cursor-pointer"
+                className="absolute top-6 right-6 bg-black/80 hover:bg-black text-white hover:text-[#60584D] p-3 rounded-[4px] transition-all duration-350 z-50 shadow-lg cursor-pointer"
               >
                 <X className="w-5 h-5 stroke-[2]" />
               </button>
 
               {/* Left Column: Image Collage & Showcase (col-span-5) */}
-              <div className="md:col-span-5 relative bg-stone-900 border-r border-[#8D9981]/15 min-h-[40vh] md:min-h-auto">
+              <div className="md:col-span-5 relative bg-stone-900 border-r border-[#60584D]/15 min-h-[40vh] md:min-h-auto">
                 <img
                   src={selectedService.image}
                   alt={selectedService.title}
@@ -517,13 +501,13 @@ export default function ServicesSection() {
                 />
                 
                 {/* Floating Badge */}
-                <div className="absolute top-6 left-6 bg-[#8D9981] text-white p-4 rounded-full shadow-lg z-20 flex items-center justify-center border border-white/10">
+                <div className="absolute top-6 left-6 bg-[#60584D] text-white p-4 rounded-full shadow-lg z-20 flex items-center justify-center border border-white/10">
                   {React.createElement(selectedService.icon, { className: "w-6 h-6 stroke-[1.5]" })}
                 </div>
 
                 {/* Left Side Label Bottom */}
                 <div className="absolute bottom-6 left-6 right-6 bg-black/75 backdrop-blur-md p-5 rounded-2xl border border-white/10 text-white z-10">
-                  <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-[#8D9981]">ANAAMII BESPOKE</span>
+                  <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-[#60584D]">ANAAMII BESPOKE</span>
                   <p className="text-white/85 text-xs font-serif italic mt-1.5 leading-relaxed">
                     "{selectedService.description}"
                   </p>
@@ -534,7 +518,7 @@ export default function ServicesSection() {
               <div className="md:col-span-7 p-8 sm:p-12 md:overflow-y-auto overflow-y-visible md:max-h-[85vh] flex flex-col justify-between">
                 <div>
                   {/* Category Note */}
-                  <span className="text-[10px] tracking-[0.25em] font-extrabold text-[#8D9981] uppercase inline-block mb-3">
+                  <span className="text-[10px] tracking-[0.25em] font-extrabold text-[#60584D] uppercase inline-block mb-3">
                     Est. 2012 / Core Service Code #{selectedService.code}
                   </span>
 
@@ -547,15 +531,15 @@ export default function ServicesSection() {
                   </h3>
 
                   {/* Golden subtle dividing line */}
-                  <div className="h-[2px] w-16 bg-[#8D9981]/65 mb-6" />
+                  <div className="h-[2px] w-16 bg-[#60584D]/65 mb-6" />
                 </div>
 
                 {/* Booking Consultation Interactive CTA block */}
-                <div className="border-t border-[#8D9981]/20 pt-6 mt-4 bg-[#8D9981]/5 p-5 sm:p-6 rounded-[2rem]">
+                <div className="border-t border-[#60584D]/20 pt-6 mt-4 bg-[#60584D]/5 p-5 sm:p-6 rounded-[2rem]">
                   {!isBooked ? (
                     <div>
                       <h4 className="text-stone-900 text-xs font-extrabold tracking-wider uppercase mb-4 flex items-center gap-2">
-                        <Calendar className="w-4 h-4 text-[#8D9981]" />
+                        <Calendar className="w-4 h-4 text-[#60584D]" />
                         <span>Book A Director Consultation</span>
                       </h4>
                       <form
@@ -582,7 +566,7 @@ export default function ServicesSection() {
                               placeholder="e.g. John"
                               value={bookingFirstName}
                               onChange={(e) => setBookingFirstName(e.target.value)}
-                              className="w-full text-stone-900 bg-white border border-[#8D9981]/25 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-[#8D9981] transition-colors"
+                              className="w-full text-stone-900 bg-white border border-[#60584D]/25 rounded-md px-4 py-2.5 text-xs focus:outline-none focus:border-[#60584D] transition-colors"
                             />
                           </div>
                           <div className="flex flex-col gap-1">
@@ -593,7 +577,7 @@ export default function ServicesSection() {
                               placeholder="e.g. Doe"
                               value={bookingLastName}
                               onChange={(e) => setBookingLastName(e.target.value)}
-                              className="w-full text-stone-900 bg-white border border-[#8D9981]/25 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-[#8D9981] transition-colors"
+                              className="w-full text-stone-900 bg-white border border-[#60584D]/25 rounded-md px-4 py-2.5 text-xs focus:outline-none focus:border-[#60584D] transition-colors"
                             />
                           </div>
                         </div>
@@ -607,7 +591,7 @@ export default function ServicesSection() {
                               placeholder="e.g. name@domain.com"
                               value={bookingEmail}
                               onChange={(e) => setBookingEmail(e.target.value)}
-                              className="w-full text-stone-900 bg-white border border-[#8D9981]/25 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-[#8D9981] transition-colors"
+                              className="w-full text-stone-900 bg-white border border-[#60584D]/25 rounded-md px-4 py-2.5 text-xs focus:outline-none focus:border-[#60584D] transition-colors"
                             />
                           </div>
                           <div className="flex flex-col gap-1">
@@ -618,7 +602,7 @@ export default function ServicesSection() {
                               placeholder="e.g. +1 (555) 000-0000"
                               value={bookingPhone}
                               onChange={(e) => setBookingPhone(e.target.value)}
-                              className="w-full text-stone-900 bg-white border border-[#8D9981]/25 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-[#8D9981] transition-colors"
+                              className="w-full text-stone-900 bg-white border border-[#60584D]/25 rounded-md px-4 py-2.5 text-xs focus:outline-none focus:border-[#60584D] transition-colors"
                             />
                           </div>
                         </div>
@@ -631,7 +615,7 @@ export default function ServicesSection() {
                               required
                               value={bookingDate}
                               onChange={(e) => setBookingDate(e.target.value)}
-                              className="text-stone-900 bg-white border border-[#8D9981]/25 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-[#8D9981] transition-colors w-full"
+                              className="text-stone-900 bg-white border border-[#60584D]/25 rounded-md px-4 py-2.5 text-xs focus:outline-none focus:border-[#60584D] transition-colors w-full"
                             />
                           </div>
                         </div>
@@ -643,14 +627,14 @@ export default function ServicesSection() {
                             placeholder="Tell us about your project or styling needs..."
                             value={bookingMessage}
                             onChange={(e) => setBookingMessage(e.target.value)}
-                            className="w-full text-stone-900 bg-white border border-[#8D9981]/25 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-[#8D9981] transition-colors resize-none"
+                            className="w-full text-stone-905 bg-white border border-[#60584D]/25 rounded-md px-4 py-2.5 text-xs focus:outline-none focus:border-[#60584D] transition-colors resize-none"
                           />
                         </div>
 
                         <div className="pt-2">
                           <button
                             type="submit"
-                            className="w-full bg-[#000000] hover:bg-[#8D9981] text-white text-xs font-bold uppercase tracking-widest py-3 rounded-[4px] transition-all duration-300 shadow-md cursor-pointer hover:shadow-lg hover:scale-[1.01]"
+                            className="w-full bg-[#000000] hover:bg-[#60584D] text-white text-xs font-bold uppercase tracking-widest py-3 rounded-md transition-all duration-300 shadow-md cursor-pointer hover:shadow-lg hover:scale-[1.01]"
                           >
                             Submit Booking Request
                           </button>
@@ -670,11 +654,214 @@ export default function ServicesSection() {
                         Consultation Requested
                       </h5>
                       <p className="text-stone-600 text-[11px] sm:text-xs mt-1.5 leading-relaxed max-w-md mx-auto font-sans">
-                        Thank you, <strong className="text-stone-900">{bookingFirstName} {bookingLastName}</strong>! Our Principal Director <strong className="text-[#8D9981]">Prachi Nagpal</strong> has received your message and requested date (<strong className="text-stone-900">{bookingDate}</strong>). We will get in touch with you at <strong className="text-stone-900">{bookingPhone}</strong> or <strong className="text-stone-900">{bookingEmail}</strong> within 2 hours.
+                        Thank you, <strong className="text-stone-900">{bookingFirstName} {bookingLastName}</strong>! Our Principal Director <strong className="text-[#60584D]">Prachi Nagpal</strong> has received your message and requested date (<strong className="text-stone-900">{bookingDate}</strong>). We will get in touch with you at <strong className="text-stone-900">{bookingPhone}</strong> or <strong className="text-stone-900">{bookingEmail}</strong> within 2 hours.
                       </p>
                     </motion.div>
                   )}
                 </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+
+        {isBespokeModalOpen && (
+          <div className="fixed inset-0 z-50 overflow-y-auto bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 md:p-10">
+            {/* Modal Box */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 30 }}
+              transition={{ type: "spring", damping: 25, stiffness: 180 }}
+              className="relative bg-[#F5F2ED] w-full max-w-4xl rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 flex flex-col md:grid md:grid-cols-12 min-h-[75vh] my-4"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => {
+                  setIsBespokeModalOpen(false);
+                  setIsBespokeSubmitted(false);
+                }}
+                className="absolute top-6 right-6 bg-black/80 hover:bg-black text-white hover:text-[#60584D] p-3 rounded-full transition-all duration-350 z-50 shadow-lg cursor-pointer"
+              >
+                <X className="w-5 h-5 stroke-[2]" />
+              </button>
+
+              {/* Left Column: Premium Brand Visual Card (col-span-5) */}
+              <div className="md:col-span-5 relative bg-[#1E1C1A] text-white p-8 flex flex-col justify-between min-h-[35vh] md:min-h-auto">
+                <div className="absolute inset-0 z-0">
+                  <img
+                    src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80"
+                    alt="Premium Interior Design"
+                    className="w-full h-full object-cover opacity-20 filter brightness-[0.7]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1C1B1A] via-transparent to-black/30" />
+                </div>
+
+                <div className="relative z-10">
+                  <span className="text-[10px] uppercase tracking-[0.3em] font-mono font-bold text-[#60584D] block mb-2">
+                    EXCLUSIVE CURATION
+                  </span>
+                  <h3 className="text-2xl font-bold tracking-tight font-serif italic mb-4">
+                    Architectural Metamorphosis
+                  </h3>
+                  <p className="text-stone-300 text-xs font-sans leading-relaxed">
+                    Elevate private environments with luxury programs designed around your physical spaces, grain-matched timbers, raw steel accents, and customized illumination profiles.
+                  </p>
+                </div>
+
+                <div className="relative z-10 border-t border-white/10 pt-6 mt-6">
+                  <div className="flex flex-col gap-2.5">
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#60584D]" />
+                      <span className="text-[10px] uppercase tracking-wider text-stone-300">Curator-Grade Carpentry</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#60584D]" />
+                      <span className="text-[10px] uppercase tracking-wider text-stone-300">Primal Italian Stones</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#60584D]" />
+                      <span className="text-[10px] uppercase tracking-wider text-stone-300">Custom Architectural Hardware</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Dynamic Inquiry Form (col-span-7) */}
+              <div className="md:col-span-7 p-8 sm:p-10 md:overflow-y-auto md:max-h-[75vh] flex flex-col justify-between">
+                {!isBespokeSubmitted ? (
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      if (bespokeName.trim() && bespokeEmail.trim()) {
+                        setIsBespokeSubmitted(true);
+                      }
+                    }}
+                    className="space-y-4"
+                  >
+                    <div>
+                      <span className="text-[9px] font-mono tracking-widest text-[#60584D] uppercase font-bold block mb-1">
+                        Bespoke Request Program
+                      </span>
+                      <h4
+                        className="text-stone-900 text-2xl font-bold tracking-tight mb-2"
+                        style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+                      >
+                        Bespoke Design Program
+                      </h4>
+                      <p className="text-stone-500 text-xs leading-relaxed font-sans mb-4">
+                        Submit your project requirements below, and our Design Director will prepare a curated prospectus for your private review.
+                      </p>
+                    </div>
+
+                    <div className="space-y-3.5">
+                      <div className="flex flex-col gap-1">
+                        <label className="text-[10px] text-stone-650 font-bold uppercase tracking-wider pl-1 font-sans">
+                          YOUR FAMILY / FIRM NAME
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          placeholder="e.g. Sterling Estates Group"
+                          value={bespokeName}
+                          onChange={(e) => setBespokeName(e.target.value)}
+                          className="w-full text-stone-900 bg-white border border-[#60584D]/25 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-[#60584D] transition-colors"
+                        />
+                      </div>
+
+                      <div className="flex flex-col gap-1">
+                        <label className="text-[10px] text-stone-650 font-bold uppercase tracking-wider pl-1 font-sans">
+                          SECURE CONTACT EMAIL
+                        </label>
+                        <input
+                          type="email"
+                          required
+                          placeholder="e.g. client@domain.com"
+                          value={bespokeEmail}
+                          onChange={(e) => setBespokeEmail(e.target.value)}
+                          className="w-full text-stone-900 bg-white border border-[#60584D]/25 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-[#60584D] transition-colors"
+                        />
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                        <div className="flex flex-col gap-1">
+                          <label className="text-[10px] text-stone-650 font-bold uppercase tracking-wider pl-1 font-sans">
+                            DESIRED SPATIAL SERVICE
+                          </label>
+                          <select
+                            value={bespokeServiceType}
+                            onChange={(e) => setBespokeServiceType(e.target.value)}
+                            className="text-stone-900 bg-white border border-[#60584D]/25 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-[#60584D] transition-colors w-full cursor-pointer"
+                          >
+                            <option value="Bespoke Furniture Curation">Bespoke Furniture Curation</option>
+                            <option value="Comprehensive Private Estate Curation">Comprehensive Private Estate</option>
+                            <option value="Acoustic & AV Space Engineering">Acoustic & AV Spaces</option>
+                            <option value="Curated Architectural Light Mastery">Architectural Illumination</option>
+                          </select>
+                        </div>
+
+                        <div className="flex flex-col gap-1">
+                          <label className="text-[10px] text-stone-650 font-bold uppercase tracking-wider pl-1 font-sans">
+                            INVESTMENT CAPACITY
+                          </label>
+                          <select
+                            value={bespokeBudget}
+                            onChange={(e) => setBespokeBudget(e.target.value)}
+                            className="text-stone-900 bg-white border border-[#60584D]/25 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-[#60584D] transition-colors w-full cursor-pointer"
+                          >
+                            <option value="Signature Estate Scale">Signature Estate Class</option>
+                            <option value="Deluxe High-End Scale">Deluxe Scale</option>
+                            <option value="Ultra-Luxe Uncompromising Program">Uncompromising/Ultra-Luxe</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col gap-1">
+                        <label className="text-[10px] text-stone-650 font-bold uppercase tracking-wider pl-1 font-sans">
+                          PARTICULAR REQUISITIONS / BRIEF
+                        </label>
+                        <textarea
+                          rows={3}
+                          placeholder="What architectural or furniture custom requirements do you seek..."
+                          value={bespokeMessage}
+                          onChange={(e) => setBespokeMessage(e.target.value)}
+                          className="w-full text-stone-900 bg-white border border-[#60584D]/25 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-[#60584D] transition-colors resize-none"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="pt-2">
+                      <button
+                        type="submit"
+                        className="w-full bg-[#0c0a09] hover:bg-[#1c1917] hover:shadow-lg hover:scale-[1.01] text-white text-xs font-bold uppercase tracking-widest py-3 pb-3.5 rounded-xl transition-all duration-300 shadow-md cursor-pointer flex items-center justify-center gap-2"
+                      >
+                        <Sparkles className="w-3.5 h-3.5 text-[#60584D]" />
+                        <span>Register Custom Request</span>
+                      </button>
+                    </div>
+                  </form>
+                ) : (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="text-center py-10 px-4 bg-white/60 backdrop-blur-sm rounded-[2rem] border border-[#60584D]/25"
+                  >
+                    <div className="w-12 h-12 bg-[#60584D]/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-[#60584D]/35">
+                      <Check className="w-6 h-6 text-[#60584D] stroke-[2.5]" />
+                    </div>
+                    <h5
+                      className="text-stone-900 text-xl font-bold tracking-tight mb-2"
+                      style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+                    >
+                      Bespoke Registry Locked
+                    </h5>
+                    <p className="text-stone-650 text-xs leading-relaxed max-w-sm mx-auto font-sans">
+                      Thank you, <strong className="text-stone-900">{bespokeName}</strong>. Your custom inquiry for <strong className="text-stone-900">{bespokeServiceType}</strong> has been logged in our secure registry.
+                    </p>
+                    <p className="text-stone-400 text-[11px] mt-4 font-sans italic">
+                      Our Executive Concierge will reach out via <span className="text-stone-750 font-semibold">{bespokeEmail}</span> shortly.
+                    </p>
+                  </motion.div>
+                )}
               </div>
             </motion.div>
           </div>

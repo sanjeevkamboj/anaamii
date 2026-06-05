@@ -38,24 +38,6 @@ const spaces = [
     label: "Home Office",
     description: "Executive Studio Rooms",
     image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=700&q=80"
-  },
-  {
-    id: "laundry",
-    label: "Laundry Room",
-    description: "Utility & Washing Chambers",
-    image: "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=700&q=80"
-  },
-  {
-    id: "millwork",
-    label: "Custom Millwork",
-    description: "Artisanal Tailored Millwork",
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=700&q=80"
-  },
-  {
-    id: "library",
-    label: "Library & Lounge",
-    description: "Sovereign Bookcases & Cellars",
-    image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=700&q=80"
   }
 ];
 
@@ -119,8 +101,8 @@ export default function ContactCTA() {
             <div className="space-y-6">
               {/* Category Tag */}
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#8D9981] rounded-full animate-pulse" />
-                <span className="text-[11px] font-sans tracking-[0.4em] text-[#8D9981] uppercase font-extrabold">
+                <span className="w-1.5 h-1.5 bg-[#60584D] rounded-full animate-pulse" />
+                <span className="text-[11px] font-sans tracking-[0.4em] text-[#60584D] uppercase font-extrabold">
                   07 / COLLABORATION
                 </span>
               </div>
@@ -130,7 +112,7 @@ export default function ContactCTA() {
                 className="text-4xl sm:text-5xl lg:text-6xl text-[#1C1B1A] font-extrabold tracking-tight leading-[1.1]"
                 style={{ fontFamily: "var(--font-sans)" }}
               >
-                Let’s draft your <span className="font-serif italic font-normal text-[#8D9981] block sm:inline">signature space.</span>
+                Let’s draft your <span className="font-serif italic font-normal text-[#60584D] block sm:inline">signature space.</span>
               </h2>
 
               {/* Sophisticated Editorial Copy */}
@@ -141,31 +123,31 @@ export default function ContactCTA() {
               {/* Exclusivity list of values */}
               <div className="space-y-4 pt-4 border-t border-stone-100 max-w-sm">
                 <div className="flex items-start gap-4 group">
-                  <div className="w-5 h-5 rounded-full bg-[#8D9981]/15 border border-[#8D9981]/30 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#8D9981] group-hover:text-white transition-all duration-350">
-                    <span className="text-[10px] font-mono font-bold text-[#8D9981] group-hover:text-white">01</span>
+                  <div className="w-5 h-5 rounded-full bg-[#60584D]/15 border border-[#60584D]/30 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#60584D] group-hover:text-white transition-all duration-350">
+                    <span className="text-[10px] font-mono font-bold text-[#60584D] group-hover:text-white">01</span>
                   </div>
                   <div>
-                    <h4 className="text-xs font-semibold text-[#1C1B1A] tracking-wider uppercase group-hover:text-[#8D9981] transition-colors">Virtual or On-Site Mapping</h4>
+                    <h4 className="text-xs font-semibold text-[#1C1B1A] tracking-wider uppercase group-hover:text-[#60584D] transition-colors">Virtual or On-Site Mapping</h4>
                     <p className="text-[11px] text-stone-500 mt-0.5 font-light">60-minute space planning and architectural schematic overview.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4 group">
-                  <div className="w-5 h-5 rounded-full bg-[#8D9981]/15 border border-[#8D9981]/30 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#8D9981] group-hover:text-white transition-all duration-350">
-                    <span className="text-[10px] font-mono font-bold text-[#8D9981] group-hover:text-white">02</span>
+                  <div className="w-5 h-5 rounded-full bg-[#60584D]/15 border border-[#60584D]/30 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#60584D] group-hover:text-white transition-all duration-350">
+                    <span className="text-[10px] font-mono font-bold text-[#60584D] group-hover:text-white">02</span>
                   </div>
                   <div>
-                    <h4 className="text-xs font-semibold text-[#1C1B1A] tracking-wider uppercase group-hover:text-[#8D9981] transition-colors">Material Selection Guides</h4>
+                    <h4 className="text-xs font-semibold text-[#1C1B1A] tracking-wider uppercase group-hover:text-[#60584D] transition-colors">Material Selection Guides</h4>
                     <p className="text-[11px] text-stone-500 mt-0.5 font-light">Review physical hardwood timber samples, patinas, and premium brass accents.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4 group">
-                  <div className="w-5 h-5 rounded-full bg-[#8D9981]/15 border border-[#8D9981]/30 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#8D9981] group-hover:text-white transition-all duration-350">
-                    <span className="text-[10px] font-mono font-bold text-[#8D9981] group-hover:text-white">03</span>
+                  <div className="w-5 h-5 rounded-full bg-[#60584D]/15 border border-[#60584D]/30 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#60584D] group-hover:text-white transition-all duration-350">
+                    <span className="text-[10px] font-mono font-bold text-[#60584D] group-hover:text-white">03</span>
                   </div>
                   <div>
-                    <h4 className="text-xs font-semibold text-[#1C1B1A] tracking-wider uppercase group-hover:text-[#8D9981] transition-colors">Uncompromising Quality</h4>
+                    <h4 className="text-xs font-semibold text-[#1C1B1A] tracking-wider uppercase group-hover:text-[#60584D] transition-colors">Uncompromising Quality</h4>
                     <p className="text-[11px] text-stone-500 mt-0.5 font-light">Engineered to tolerances of under 0.5mm at our local joinery workshops.</p>
                   </div>
                 </div>
@@ -174,7 +156,7 @@ export default function ContactCTA() {
 
             {/* Quiet, high-end blockquote */}
             <div className="pt-4 border-t border-stone-100 hidden lg:block">
-              <p className="text-xs font-serif italic text-stone-400 leading-relaxed max-w-xs border-l border-[#8D9981]/30 pl-3">
+              <p className="text-xs font-serif italic text-stone-400 leading-relaxed max-w-xs border-l border-[#60584D]/30 pl-3">
                 “True luxury lies in the micro-details—the silent sweep of a soft-close door and the exact grain match of continuous walnut panels.”
               </p>
               <span className="text-[9px] font-mono uppercase tracking-widest text-[#979AAA] mt-2 block">— Copenhagen Studio Lead</span>
@@ -187,7 +169,7 @@ export default function ContactCTA() {
           <div className="bg-white border border-[#EAE6E1] pt-4 pb-6 px-6 sm:pt-5 sm:pb-10 sm:px-10 shadow-[0_25px_60px_-25px_rgba(28,27,26,0.06)] rounded-none relative text-left w-full">
             
             {/* Extremely elegant olive minimal card-edge accent line */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-[#8D9981]" />
+            <div className="absolute top-0 left-0 right-0 h-1 bg-[#60584D]" />
 
             <AnimatePresence mode="wait">
               {!isSubmitted ? (
@@ -208,19 +190,19 @@ export default function ContactCTA() {
                             <motion.div
                               initial={{ scale: 0.6, opacity: 0 }}
                               animate={{ scale: 1, opacity: 1 }}
-                              className="w-4 h-4 rounded-full bg-[#8D9981] flex items-center justify-center text-white"
+                              className="w-4 h-4 rounded-full bg-[#60584D] flex items-center justify-center text-white"
                             >
                               <Check className="w-2.5 h-2.5 stroke-[3]" />
                             </motion.div>
                           ) : (
                             <div className="relative flex items-center justify-center">
-                              <span className="absolute w-4 h-4 rounded-full border border-[#8D9981]/30 bg-[#8D9981]/15 animate-ping" />
-                              <span className="w-2.5 h-2.5 rounded-full bg-[#8D9981] relative z-10" />
+                              <span className="absolute w-4 h-4 rounded-full border border-[#60584D]/30 bg-[#60584D]/15 animate-ping" />
+                              <span className="w-2.5 h-2.5 rounded-full bg-[#60584D] relative z-10" />
                             </div>
                           )}
                         </div>
                         <span className={`text-[10px] sm:text-[11.5px] font-semibold tracking-[0.25em] ${
-                          step === 1 ? "text-stone-900 font-bold" : "text-[#8D9981]"
+                          step === 1 ? "text-stone-900 font-bold" : "text-[#60584D]"
                         }`}>
                           Select Space
                         </span>
@@ -236,15 +218,15 @@ export default function ContactCTA() {
                         }`}
                       >
                         <span className={`text-[10px] sm:text-[11.5px] font-semibold tracking-[0.25em] ${
-                          step === 2 ? "text-[#8D9981] font-bold" : "text-stone-400"
+                          step === 2 ? "text-[#60584D] font-bold" : "text-stone-400"
                         }`}>
                           Contact Details
                         </span>
                         <div className="relative flex items-center justify-center w-5 h-5">
                           {step === 2 ? (
                             <div className="relative flex items-center justify-center">
-                              <span className="absolute w-4 h-4 rounded-full border border-[#8D9981]/30 bg-[#8D9981]/15 animate-ping" />
-                              <span className="w-2.5 h-2.5 rounded-full bg-[#8D9981] relative z-10" />
+                              <span className="absolute w-4 h-4 rounded-full border border-[#60584D]/30 bg-[#60584D]/15 animate-ping" />
+                              <span className="w-2.5 h-2.5 rounded-full bg-[#60584D] relative z-10" />
                             </div>
                           ) : (
                             <span className="w-2.5 h-2.5 rounded-full bg-stone-200 border border-stone-100" />
@@ -256,7 +238,7 @@ export default function ContactCTA() {
                     {/* Progress Track Line positioned at the bottom of the progress header */}
                     <div className="w-full h-[2px] bg-stone-100 relative overflow-hidden rounded-full">
                       <motion.div 
-                        className="absolute top-0 left-0 h-full bg-[#8D9981]" 
+                        className="absolute top-0 left-0 h-full bg-[#60584D]" 
                         initial={{ width: "50%" }}
                         animate={{ width: step === 1 ? "50%" : "100%" }}
                         transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -276,7 +258,7 @@ export default function ContactCTA() {
                         className="space-y-5"
                       >
                         <div>
-                          <span className="text-[9px] font-mono tracking-widest text-[#8D9981] uppercase block mb-1">
+                          <span className="text-[9px] font-mono tracking-widest text-[#60584D] uppercase block mb-1">
                             Atelier Configurator Step 1
                           </span>
                           <h3 className="text-xl font-bold text-[#1C1B1A] tracking-tight">
@@ -295,8 +277,8 @@ export default function ContactCTA() {
                                 onClick={() => handleSelectSpace(space.label)}
                                 className={`relative overflow-hidden rounded-xl aspect-[1.3] sm:aspect-[1.25] md:aspect-[1.22] lg:aspect-[1.2] xl:aspect-[1.18] 2xl:aspect-[1.22] group text-left cursor-pointer border transition-all duration-500 flex flex-col justify-end p-2.5 sm:p-3 shadow-sm ${
                                   isSel
-                                    ? "border-[#8D9981] ring-1 ring-[#8D9981]/50 bg-[#8D9981]/5"
-                                    : "border-stone-200/80 hover:border-[#8D9981]/60 bg-white"
+                                    ? "border-[#60584D] ring-1 ring-[#60584D]/50 bg-[#60584D]/5"
+                                    : "border-stone-200/80 hover:border-[#60584D]/60 bg-white"
                                 }`}
                               >
                                 <img
@@ -310,14 +292,14 @@ export default function ContactCTA() {
                                 {/* Mini Select Dot Accent */}
                                 <div className={`absolute top-2.5 right-2.5 w-4 h-4 rounded-full border flex items-center justify-center transition-all ${
                                   isSel 
-                                    ? "border-[#8D9981] bg-[#8D9981] text-white" 
+                                    ? "border-[#60584D] bg-[#60584D] text-white" 
                                     : "border-white/30 bg-black/30 text-transparent"
-                                }}`}>
+                                }`}>
                                   <div className="w-1 h-1 rounded-full bg-current" />
                                 </div>
 
                                 <div className="relative z-10">
-                                  <span className="block text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider group-hover:text-[#8D9981] transition-colors leading-tight">
+                                  <span className="block text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider group-hover:text-[#60584D] transition-colors leading-tight">
                                     {space.label}
                                   </span>
                                   <span className="block text-[8.5px] sm:text-[9.5px] text-stone-300 font-light mt-0.5 whitespace-nowrap overflow-hidden text-ellipsis">
@@ -350,13 +332,13 @@ export default function ContactCTA() {
                             <span>Change Space</span>
                           </button>
                           
-                          <span className="text-[10px] uppercase font-mono tracking-widest bg-[#8D9981]/15 text-[#8D9981] px-2.5 py-1 border border-[#8D9981]/30 font-semibold rounded-[4px]">
+                          <span className="text-[10px] uppercase font-mono tracking-widest bg-[#60584D]/15 text-[#60584D] px-2.5 py-1 border border-[#60584D]/30 font-semibold rounded-[4px]">
                             Space: {formData.selectedSpace}
                           </span>
                         </div>
 
                         <div>
-                          <span className="text-[9px] font-mono tracking-widest text-[#8D9981] uppercase block mb-1">
+                          <span className="text-[9px] font-mono tracking-widest text-[#60584D] uppercase block mb-1">
                             Atelier Configurator Step 2
                           </span>
                           <h3 className="text-xl font-bold text-[#1C1B1A] tracking-tight">
@@ -377,7 +359,7 @@ export default function ContactCTA() {
                                 placeholder="Adrienne"
                                 value={formData.firstName}
                                 onChange={(e) => setFormData({...formData, firstName: e.target.value})}
-                                className="w-full px-4 py-2.5 bg-stone-50 border border-stone-200 focus:border-[#8D9981] focus:ring-1 focus:ring-[#8D9981]/30 focus:bg-white text-stone-900 text-xs focus:outline-none transition-all font-sans tracking-wide rounded-lg"
+                                className="w-full px-4 py-2.5 bg-stone-50 border border-stone-200 focus:border-[#60584D] focus:ring-1 focus:ring-[#60584D]/30 focus:bg-white text-stone-900 text-xs focus:outline-none transition-all font-sans tracking-wide rounded-lg"
                               />
                             </div>
 
@@ -389,7 +371,7 @@ export default function ContactCTA() {
                                 placeholder="Vance"
                                 value={formData.lastName}
                                 onChange={(e) => setFormData({...formData, lastName: e.target.value})}
-                                className="w-full px-4 py-2.5 bg-stone-50 border border-stone-200 focus:border-[#8D9981] focus:ring-1 focus:ring-[#8D9981]/30 focus:bg-white text-stone-900 text-xs focus:outline-none transition-all font-sans tracking-wide rounded-lg"
+                                className="w-full px-4 py-2.5 bg-stone-50 border border-stone-200 focus:border-[#60584D] focus:ring-1 focus:ring-[#60584D]/30 focus:bg-white text-stone-900 text-xs focus:outline-none transition-all font-sans tracking-wide rounded-lg"
                               />
                             </div>
                           </div>
@@ -404,7 +386,7 @@ export default function ContactCTA() {
                                 placeholder="adrienne@residence.com"
                                 value={formData.email}
                                 onChange={(e) => setFormData({...formData, email: e.target.value})}
-                                className="w-full px-4 py-2.5 bg-stone-50 border border-stone-200 focus:border-[#8D9981] focus:ring-1 focus:ring-[#8D9981]/30 focus:bg-white text-stone-900 text-xs focus:outline-none transition-all font-sans tracking-wide rounded-lg"
+                                className="w-full px-4 py-2.5 bg-stone-50 border border-stone-200 focus:border-[#60584D] focus:ring-1 focus:ring-[#60584D]/30 focus:bg-white text-stone-900 text-xs focus:outline-none transition-all font-sans tracking-wide rounded-lg"
                               />
                             </div>
 
@@ -416,7 +398,7 @@ export default function ContactCTA() {
                                 placeholder="+1 (416) 555-0192"
                                 value={formData.phone}
                                 onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                                className="w-full px-4 py-2.5 bg-stone-50 border border-stone-200 focus:border-[#8D9981] focus:ring-1 focus:ring-[#8D9981]/30 focus:bg-white text-stone-900 text-xs focus:outline-none transition-all font-sans tracking-wide rounded-lg"
+                                className="w-full px-4 py-2.5 bg-stone-50 border border-stone-200 focus:border-[#60584D] focus:ring-1 focus:ring-[#60584D]/30 focus:bg-white text-stone-900 text-xs focus:outline-none transition-all font-sans tracking-wide rounded-lg"
                               />
                             </div>
                           </div>
@@ -424,7 +406,7 @@ export default function ContactCTA() {
                           {/* Row 3: Appointment Date Selection */}
                           <div className="space-y-1">
                             <label className="text-[10px] font-mono tracking-wider text-stone-400 uppercase flex items-center gap-1">
-                              <Calendar className="w-3 h-3 text-[#8D9981]" />
+                              <Calendar className="w-3 h-3 text-[#60584D]" />
                               <span>Preferred Appointment Date *</span>
                             </label>
                             <input
@@ -432,7 +414,7 @@ export default function ContactCTA() {
                               type="date"
                               value={formData.appointmentDate}
                               onChange={(e) => setFormData({...formData, appointmentDate: e.target.value})}
-                              className="w-full px-4 py-2.5 bg-stone-50 border border-stone-200 focus:border-[#8D9981] focus:ring-1 focus:ring-[#8D9981]/30 text-stone-900 text-xs focus:outline-none cursor-pointer rounded-lg transition-all"
+                              className="w-full px-4 py-2.5 bg-stone-50 border border-stone-200 focus:border-[#60584D] focus:ring-1 focus:ring-[#60584D]/30 text-stone-900 text-xs focus:outline-none cursor-pointer rounded-lg transition-all"
                             />
                           </div>
 
@@ -445,19 +427,19 @@ export default function ContactCTA() {
                               placeholder={`List parameters or vision details for your customized ${formData.selectedSpace}...`}
                               value={formData.message}
                               onChange={(e) => setFormData({...formData, message: e.target.value})}
-                              className="w-full px-4 py-2.5 bg-stone-50 border border-stone-200 focus:border-[#8D9981] focus:ring-1 focus:ring-[#8D9981]/30 focus:bg-white text-stone-900 text-xs focus:outline-none transition-all font-sans tracking-wide resize-none rounded-lg"
+                              className="w-full px-4 py-2.5 bg-stone-50 border border-stone-200 focus:border-[#60584D] focus:ring-1 focus:ring-[#60584D]/30 focus:bg-white text-stone-900 text-xs focus:outline-none transition-all font-sans tracking-wide resize-none rounded-lg"
                             />
                           </div>
                         </div>
 
                         {/* Symmetrical Catalog Option inside light box */}
-                        <div className="flex items-start gap-2.5 select-none pt-1">
+                        <div className="flex items-center gap-2.5 select-none pt-1">
                           <input
                             type="checkbox"
                             id="conciergeCatalogOption"
                             checked={formData.catalogOption}
                             onChange={(e) => setFormData({...formData, catalogOption: e.target.checked})}
-                            className="w-4 h-4 mt-0.5 rounded border-stone-300 text-stone-900 accent-[#8D9981] cursor-pointer shrink-0"
+                            className="w-4 h-4 rounded border-stone-300 text-stone-900 accent-[#60584D] cursor-pointer shrink-0"
                           />
                           <label htmlFor="conciergeCatalogOption" className="text-[10.5px] text-stone-500 cursor-pointer font-sans leading-tight">
                             Deliver architectural <span className="text-[#1C1B1A] font-semibold">Atelier Portfolio Catalogs</span> directly to my coordinate.
@@ -467,15 +449,10 @@ export default function ContactCTA() {
                         {/* Luxurious Action Button */}
                         <button
                           type="submit"
-                          disabled={!isFormValid}
-                          className={`w-full py-4 mt-2 font-sans text-xs font-bold tracking-[0.25em] uppercase transition-all flex items-center justify-center gap-2 rounded-[4px] cursor-pointer ${
-                            isFormValid
-                              ? "bg-[#8D9981] text-white hover:bg-[#7e8a71] hover:shadow-[0_12px_30px_rgba(141,153,129,0.3)]"
-                              : "bg-stone-100 text-stone-400 border border-stone-200 cursor-not-allowed"
-                          }`}
+                          className="group w-full py-4 mt-2 font-sans text-xs font-bold tracking-[0.25em] uppercase transition-all duration-300 flex items-center justify-center gap-2 rounded-[4px] shadow-md bg-[#60584D] text-white hover:bg-[#4E473E] hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(96,88,77,0.35)] active:translate-y-0 cursor-pointer"
                         >
                           <span>CONFIRM CONSULTATION REQUEST</span>
-                          <ArrowRight className="w-3.5 h-3.5" />
+                          <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1.5 transition-transform duration-300" />
                         </button>
                       </motion.form>
                     )}
@@ -500,7 +477,7 @@ export default function ContactCTA() {
 
                   <div className="text-stone-600 text-xs sm:text-sm max-w-md mx-auto leading-relaxed space-y-4 font-sans mb-8">
                     <p>
-                      Thank you, <strong className="text-black font-semibold">{formData.firstName} {formData.lastName}</strong>. Your custom consultation request for a luxurious <strong className="text-[#8D9981] font-semibold">{formData.selectedSpace}</strong> has been registered on our server.
+                      Thank you, <strong className="text-black font-semibold">{formData.firstName} {formData.lastName}</strong>. Your custom consultation request for a luxurious <strong className="text-[#60584D] font-semibold">{formData.selectedSpace}</strong> has been registered on our server.
                     </p>
                     <p className="text-stone-500 font-light">
                       One of our expert draftspersons will review your specs and email you closely at <strong className="text-stone-800">{formData.email}</strong> by <strong className="text-stone-800">{formData.appointmentDate}</strong>.

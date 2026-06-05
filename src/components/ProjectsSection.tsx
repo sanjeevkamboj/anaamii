@@ -234,10 +234,10 @@ export default function ProjectsSection() {
               {/* Double Click Zoom / Magnification Toggle */}
               <button
                 onClick={() => setIsZoomed(!isZoomed)}
-                className="w-12 h-12 rounded-[4px] bg-black/40 backdrop-blur-md border border-white/10 text-white hover:text-[#8D9981] flex items-center justify-center transition-all duration-300 pointer-events-auto cursor-pointer focus:outline-none"
+                className="w-12 h-12 rounded-[4px] bg-black/40 backdrop-blur-md border border-white/10 text-white hover:text-[#60584D] flex items-center justify-center transition-all duration-300 pointer-events-auto cursor-pointer focus:outline-none"
                 aria-label="Toggle Magnification"
               >
-                <Maximize2 className={`w-4 h-4 transition-transform duration-300 ${isZoomed ? "scale-110 text-[#8D9981]" : ""}`} />
+                <Maximize2 className={`w-4 h-4 transition-transform duration-300 ${isZoomed ? "scale-110 text-[#60584D]" : ""}`} />
               </button>
 
               {/* Close/Dismiss Slider button */}
@@ -293,14 +293,14 @@ export default function ProjectsSection() {
 
                 {/* Subtle active magnifier pulse dot */}
                 {isZoomed && (
-                  <div className="absolute bottom-6 right-6 z-40 w-2 h-2 rounded-full bg-[#8D9981] animate-ping pointer-events-none" />
+                  <div className="absolute bottom-6 right-6 z-40 w-2 h-2 rounded-full bg-[#60584D] animate-ping pointer-events-none" />
                 )}
               </div>
 
               {/* Back slide switcher arrow */}
               <button
                 onClick={handlePrev}
-                className="absolute left-3 sm:left-6 md:left-12 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-14 sm:h-14 rounded-[4px] bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/30 text-white hover:text-[#8D9981] flex items-center justify-center transition-all duration-300 active:scale-90 cursor-pointer focus:outline-none z-40 hover:scale-105"
+                className="absolute left-3 sm:left-6 md:left-12 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-14 sm:h-14 rounded-[4px] bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/30 text-white hover:text-[#60584D] flex items-center justify-center transition-all duration-300 active:scale-90 cursor-pointer focus:outline-none z-40 hover:scale-105"
                 aria-label="Previous Image"
               >
                 <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2]" />
@@ -309,7 +309,7 @@ export default function ProjectsSection() {
               {/* Forward slide switcher arrow */}
               <button
                 onClick={handleNext}
-                className="absolute right-3 sm:right-6 md:right-12 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-14 sm:h-14 rounded-[4px] bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/30 text-white hover:text-[#8D9981] flex items-center justify-center transition-all duration-300 active:scale-90 cursor-pointer focus:outline-none z-40 hover:scale-105"
+                className="absolute right-3 sm:right-6 md:right-12 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-14 sm:h-14 rounded-[4px] bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/30 text-white hover:text-[#60584D] flex items-center justify-center transition-all duration-300 active:scale-90 cursor-pointer focus:outline-none z-40 hover:scale-105"
                 aria-label="Next Image"
               >
                 <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2]" />
@@ -328,7 +328,7 @@ export default function ProjectsSection() {
                   }}
                   className={`h-2 rounded-full transition-all duration-300 cursor-pointer flex-shrink-0 ${
                     dotIdx === selectedIdx 
-                      ? "w-8 bg-[#8D9981]" 
+                      ? "w-8 bg-[#60584D]" 
                       : "w-2 bg-white/30 hover:bg-white"
                   }`}
                   aria-label={`Slide ${dotIdx + 1}`}

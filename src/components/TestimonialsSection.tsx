@@ -148,7 +148,7 @@ export default function TestimonialsSection() {
           <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-sans font-extrabold tracking-tight leading-[1.1] mb-2.5">
             Client Experiences
           </h2>
-          <p className="text-[#8D9981] font-sans text-xs sm:text-sm tracking-widest leading-relaxed font-bold uppercase">
+          <p className="text-[#60584D] font-sans text-xs sm:text-sm tracking-widest leading-relaxed font-bold uppercase">
             What Our Clients Say About Their Home Transformations
           </p>
         </div>
@@ -224,7 +224,7 @@ export default function TestimonialsSection() {
                     className={`absolute w-[82vw] sm:w-[460px] md:w-[410px] lg:w-[350px] xl:w-[390px] 2xl:w-[450px] shrink-0 bg-white/95 backdrop-blur-md rounded-[1.75rem] lg:rounded-[2rem] sm:rounded-[2.5rem] border border-white/80 p-5 sm:p-6 lg:p-4.5 xl:p-6 2xl:p-10 text-stone-900 select-none shadow-[0_20px_50px_rgba(0,0,0,0.3)] selection:bg-transparent transition-shadow duration-500 hover:shadow-[0_40px_80px_rgba(0,0,0,0.45)] flex flex-col justify-between h-[340px] sm:h-[310px] lg:h-[260px] xl:h-[290px] 2xl:h-[340px]`}
                   >
                     {/* Quotation mark backdrop icon */}
-                    <div className="absolute top-4 right-6 lg:top-5 lg:right-6 text-[#8D9981]/15 pointer-events-none">
+                    <div className="absolute top-4 right-6 lg:top-5 lg:right-6 text-[#60584D]/15 pointer-events-none">
                       <Quote className="w-12 h-12 lg:w-10 lg:h-10 xl:w-14 xl:h-14 fill-current rotate-180" />
                     </div>
 
@@ -233,7 +233,7 @@ export default function TestimonialsSection() {
                       {/* Rating Icons */}
                       <div className="flex gap-1 mb-3 lg:mb-2 xl:mb-3">
                         {[...Array(item.rating)].map((_, i) => (
-                          <Star key={i} className="w-3.5 h-3.5 lg:w-3 lg:h-3 xl:w-4 xl:h-4 fill-[#8D9981] text-[#8D9981] stroke-[1]" />
+                          <Star key={i} className="w-3.5 h-3.5 lg:w-3 lg:h-3 xl:w-4 xl:h-4 fill-[#60584D] text-[#60584D] stroke-[1]" />
                         ))}
                       </div>
 
@@ -249,12 +249,12 @@ export default function TestimonialsSection() {
                         <img
                           src={item.image}
                           alt={item.name}
-                          className="w-10 h-10 lg:w-8 lg:h-8 xl:w-10 xl:h-10 rounded-full object-cover border border-[#8D9981]/35"
+                          className="w-10 h-10 lg:w-8 lg:h-8 xl:w-10 xl:h-10 rounded-full object-cover border border-[#60584D]/35"
                           referrerPolicy="no-referrer"
                           loading="lazy"
                         />
                       ) : (
-                        <div className="w-10 h-10 lg:w-8 lg:h-8 xl:w-10 xl:h-10 rounded-full bg-[#8D9981]/15 flex items-center justify-center font-bold text-xs text-[#8D9981] border border-[#8D9981]/35">
+                        <div className="w-10 h-10 lg:w-8 lg:h-8 xl:w-10 xl:h-10 rounded-full bg-[#60584D]/15 flex items-center justify-center font-bold text-xs text-[#60584D] border border-[#60584D]/35">
                           {item.name.charAt(0)}
                         </div>
                       )}
@@ -280,14 +280,14 @@ export default function TestimonialsSection() {
           <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 pointer-events-none hidden sm:flex justify-between sm:px-6 z-40">
             <button
               onClick={handlePrev}
-              className="w-11 h-11 sm:w-12 sm:h-12 rounded-[4px] bg-white/10 hover:bg-white text-white hover:text-stone-900 border border-white/20 hover:border-[#8D9981] flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-300 pointer-events-auto shadow-md backdrop-blur-sm"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-[4px] bg-white/10 hover:bg-white text-white hover:text-stone-900 border border-white/20 hover:border-[#60584D] flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-300 pointer-events-auto shadow-md backdrop-blur-sm"
               aria-label="Previous Testimonial"
             >
               <ChevronLeft className="w-5 h-5 stroke-[2]" />
             </button>
             <button
               onClick={handleNext}
-              className="w-11 h-11 sm:w-12 sm:h-12 rounded-[4px] bg-white/10 hover:bg-white text-white hover:text-stone-900 border border-white/20 hover:border-[#8D9981] flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-300 pointer-events-auto shadow-md backdrop-blur-sm"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-[4px] bg-white/10 hover:bg-white text-white hover:text-stone-900 border border-white/20 hover:border-[#60584D] flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-300 pointer-events-auto shadow-md backdrop-blur-sm"
               aria-label="Next Testimonial"
             >
               <ChevronRight className="w-5 h-5 stroke-[2]" />
@@ -306,7 +306,7 @@ export default function TestimonialsSection() {
               }}
               className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                 idx === centerIdx 
-                  ? "w-8 bg-[#8D9981]" 
+                  ? "w-8 bg-[#60584D]" 
                   : "w-1.5 bg-white/30 hover:bg-white/60"
               }`}
               aria-label={`Go to slide ${idx + 1}`}
