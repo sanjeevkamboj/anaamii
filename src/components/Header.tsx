@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, ChevronRight, Instagram, Facebook } from "lucide-react";
 import { NAVIGATION_ITEMS } from "../constants";
+import logo from "../../assets/image/anaami-main-logo.png";
 
 interface HeaderProps {
   onWishlistClick?: () => void;
@@ -57,52 +58,11 @@ export default function Header({ wishlistCount = 0, currentPage = "home", onPage
               className="flex items-center gap-3 group"
             >
               {/* Premium Vector 3D Penrose / Impossible Triangle Logo */}
-              <svg
-                viewBox="0 0 160 140"
-                className="w-10 h-8.5 md:w-11 md:h-9.5 flex-shrink-0 text-white transition-all duration-300 group-hover:scale-105 pointer-events-none"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M80 15 L140 120 H20 L80 15 Z"
-                  stroke="currentColor"
-                  strokeWidth="3.5"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M80 37 L122 110 H38 Z"
-                  stroke="currentColor"
-                  strokeWidth="1.75"
-                  strokeLinejoin="round"
-                />
-                <path d="M80 15 L80 37" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                <path d="M140 120 L122 110" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                <path d="M20 120 L38 110" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                <path d="M50 67 L80 37" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                <path d="M110 67 L80 37" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                <path d="M80 110 L80 90" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                <line x1="28" y1="126" x2="132" y2="126" stroke="currentColor" strokeWidth="1" strokeOpacity="0.6" />
-              </svg>
-
-              {/* Brand Lettering */}
-              <div className="flex flex-col items-start leading-none text-left">
-                <span 
-                  className="text-[19px] md:text-[23px] font-normal tracking-[0.16em] text-white uppercase leading-none"
-                  style={{ fontFamily: "'Playfair Display', 'Cormorant Garamond', Georgia, serif" }}
-                >
-                  ΛNΛΛMII
-                </span>
-                <div className="flex items-center w-full gap-1 mt-1">
-                  <div className="h-[0.5px] bg-white/40 flex-grow"></div>
-                  <span 
-                    className="text-[6.5px] md:text-[7.5px] tracking-[0.18em] uppercase font-bold whitespace-nowrap"
-                    style={{ fontFamily: "var(--font-helvetica)", color: "#8D9981" }}
-                  >
-                    MILLWORK GROUP
-                  </span>
-                  <div className="h-[0.5px] bg-white/40 flex-grow"></div>
-                </div>
-              </div>
+            <img
+              src={logo}
+              alt="Anaamii Logo"
+              className="h-12 md:h-14 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+            />
             </a>
           </div>
 
